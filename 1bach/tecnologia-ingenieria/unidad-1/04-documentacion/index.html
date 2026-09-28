@@ -9,4 +9,31 @@
 <section class="card"><h2>5 · Tu mini memoria</h2><p>Imagina que has desarrollado un sistema para reducir el consumo energético de un aula. Escribe qué incluirías en cuatro apartados de la documentación.</p><textarea id="memo" placeholder="Problema / objetivos / pruebas / conclusiones..."></textarea><button class="button" onclick="save()">Guardar</button><p id="saved"></p></section>
 <section class="card"><h2>6 · Una comunicación rigurosa</h2><p>Los resultados deben presentarse con datos objetivos siempre que sea posible y distinguir entre datos, resultados, interpretaciones y opiniones.</p><textarea id="rigor" placeholder="Escribe una frase de conclusión basada en una evidencia..."></textarea></section>
 <div class="next"><a class="alt" href="../03-creatividad/index.html">← Creatividad</a><a href="../actividades/index.html">Ir a las 20 actividades →</a></div></main><footer>ProfeAlbertoD · Tecnología e Ingeniería · 1.º Bachillerato</footer>
-<script>function single(id,f,correctIndex=0){document.querySelectorAll('#'+id+' .choice').forEach((b,index)=>b.onclick=()=>{document.querySelectorAll('#'+id+' .choice').forEach(x=>x.classList.remove('selected','correct','incorrect'));b.classList.add('selected');b.classList.add(index===correctIndex?'correct':'incorrect');const el=document.getElementById(f);el.classList.add('show');el.textContent=index===correctIndex?el.dataset.ok:el.dataset.no})}function save(){localStorage.setItem('profealbertod-teci-u1-doc',JSON.stringify({memo:memo.value,rigor:rigor.value}));saved.textContent='Guardado en este dispositivo.'}
+<script>
+function single(id,f,correctIndex=0){
+  const buttons=[...document.querySelectorAll('#'+id+' .choice')];
+  buttons.forEach((b,index)=>{
+    b.type='button';
+    b.onclick=()=>{
+      buttons.forEach(x=>x.classList.remove('selected','correct','incorrect'));
+      b.classList.add('selected');
+      b.classList.add(index===correctIndex?'correct':'incorrect');
+      const el=document.getElementById(f);
+      el.classList.add('show');
+      el.textContent=index===correctIndex?el.dataset.ok:el.dataset.no;
+    };
+  });
+}
+
+single('q1','f1',0);
+single('q2','f2',1);
+single('q3','f3',0);
+
+function save(){
+  localStorage.setItem('profealbertod-teci-u1-doc',JSON.stringify({
+    memo:document.getElementById('memo').value,
+    rigor:document.getElementById('rigor').value
+  }));
+  document.getElementById('saved').textContent='Guardado en este dispositivo.';
+}
+</script></body></html>
