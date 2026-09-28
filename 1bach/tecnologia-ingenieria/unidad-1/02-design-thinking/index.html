@@ -68,7 +68,11 @@ function multi(id,f,correctIndexes){
     const ok=selected.length===correctIndexes.length&&selected.every(i=>correctIndexes.includes(i));
     buttons.forEach((b,i)=>{
       b.classList.remove('correct','incorrect');
-      if(b.classList.contains('selected')) b.classList.add(correctIndexes.includes(i)?'correct':'incorrect');
+      if(correctIndexes.includes(i)){
+        b.classList.add('correct');
+      }else{
+        b.classList.add('incorrect');
+      }
     });
     const el=document.getElementById(f);
     el.classList.add('show');
