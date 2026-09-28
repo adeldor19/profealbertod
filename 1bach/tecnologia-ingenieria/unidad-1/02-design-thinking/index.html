@@ -10,5 +10,77 @@
 <section class="card"><h2>6 · Define el problema</h2><p>Formula un problema tecnológico concreto a partir de una situación general: «hay demasiado consumo de agua».</p><textarea id="problem" placeholder="¿Quién tiene la necesidad? ¿Qué debe mejorar? ¿Qué condición debe respetarse?"></textarea><button class="button" onclick="save()">Guardar definición</button><p id="saved"></p></section>
 <div class="next"><a class="alt" href="../01-gestion/index.html">← Gestión</a><a href="../03-creatividad/index.html">Siguiente · Creatividad →</a></div></main><footer>ProfeAlbertoD · Tecnología e Ingeniería · 1.º Bachillerato</footer>
 <script>
-const phases=[['Empatizar','Comprender necesidades y experiencias reales.'],['Definir','Concretar el problema con la información obtenida.'],['Idear','Generar alternativas.'],['Prototipar','Construir representaciones de las soluciones.'],['Evaluar','Probar, analizar y detectar mejoras.']];let i=0;const flow=document.getElementById('flow');phases.forEach((p,n)=>{const b=document.createElement('button');b.className='phase';b.textContent=p[0];b.onclick=()=>{if(n===i){b.classList.add('done');document.getElementById('flowText').textContent=p[1];i++}else document.getElementById('flowText').textContent='Sigue la secuencia del proceso.'};flow.appendChild(b)});
-function single(id,f,correctIndex=0){document.querySelectorAll('#'+id+' .choice').forEach((b,index)=>b.onclick=()=>{document.querySelectorAll('#'+id+' .choice').forEach(x=>x.classList.remove('selected','correct','incorrect'));b.classList.add('selected');b.classList.add(index===correctIndex?'correct':'incorrect');const el=document.getElementById(f);el.classList.add('show');el.textContent=index===correctIndex?el.dataset.ok:el.dataset.no})}function multi(id,f,correctIndexes){const buttons=[...document.querySelectorAll('#'+id+' .choice')];buttons.forEach(b=>b.onclick=()=>{b.classList.toggle('selected');b.classList.remove('correct','incorrect')});const check=document.createElement('button');check.className='button';check.type='button';check.textContent='Comprobar selección';document.getElementById(id).after(check);check.onclick=()=>{const selected=buttons.map((b,i)=>b.classList.contains('selected')?i:null).filter(i=>i!==null);const ok=selected.length===correctIndexes.length&&selected.every(i=>correctIndexes.includes(i));buttons.forEach((b,i)=>{b.classList.remove('correct','incorrect');if(b.classList.contains('selected'))b.classList.add(correctIndexes.includes(i)?'correct':'incorrect')});const el=document.getElementById(f);el.classList.add('show');el.textContent=ok?el.dataset.ok:el.dataset.no}} function save(){localStorage.setItem('profealbertod-teci-u1-dt',document.getElementById('problem').value);document.getElementById('saved').textContent='Definición guardada en este dispositivo.'}
+const phases=[
+  ['Empatizar','Comprender necesidades y experiencias reales.'],
+  ['Definir','Concretar el problema con la información obtenida.'],
+  ['Idear','Generar alternativas.'],
+  ['Prototipar','Construir representaciones de las soluciones.'],
+  ['Evaluar','Probar, analizar y detectar mejoras.']
+];
+let currentPhase=0;
+const flow=document.getElementById('flow');
+const flowText=document.getElementById('flowText');
+
+phases.forEach((p,n)=>{
+  const b=document.createElement('button');
+  b.type='button';
+  b.className='phase';
+  b.textContent=(n+1)+'. '+p[0];
+  b.onclick=()=>{
+    if(n===currentPhase){
+      b.classList.add('done');
+      flowText.textContent=p[1]+(n<phases.length-1?' Ahora pasa a «'+phases[n+1][0]+'».':' Has completado las cinco fases.');
+      currentPhase++;
+    }else if(n<currentPhase){
+      flowText.textContent=p[1];
+    }else{
+      flowText.textContent='Primero completa «'+phases[currentPhase][0]+'».';
+    }
+  };
+  flow.appendChild(b);
+});
+
+function single(id,f,correctIndex=0){
+  document.querySelectorAll('#'+id+' .choice').forEach((b,index)=>{
+    b.onclick=()=>{
+      document.querySelectorAll('#'+id+' .choice').forEach(x=>x.classList.remove('selected','correct','incorrect'));
+      b.classList.add('selected');
+      b.classList.add(index===correctIndex?'correct':'incorrect');
+      const el=document.getElementById(f);
+      el.classList.add('show');
+      el.textContent=index===correctIndex?el.dataset.ok:el.dataset.no;
+    };
+  });
+}
+function multi(id,f,correctIndexes){
+  const buttons=[...document.querySelectorAll('#'+id+' .choice')];
+  buttons.forEach(b=>b.onclick=()=>{
+    b.classList.toggle('selected');
+    b.classList.remove('correct','incorrect');
+  });
+  const check=document.createElement('button');
+  check.className='button';
+  check.type='button';
+  check.textContent='Comprobar selección';
+  document.getElementById(id).after(check);
+  check.onclick=()=>{
+    const selected=buttons.map((b,i)=>b.classList.contains('selected')?i:null).filter(i=>i!==null);
+    const ok=selected.length===correctIndexes.length&&selected.every(i=>correctIndexes.includes(i));
+    buttons.forEach((b,i)=>{
+      b.classList.remove('correct','incorrect');
+      if(b.classList.contains('selected')) b.classList.add(correctIndexes.includes(i)?'correct':'incorrect');
+    });
+    const el=document.getElementById(f);
+    el.classList.add('show');
+    el.textContent=ok?el.dataset.ok:el.dataset.no;
+  };
+}
+single('q1','f1',0);
+multi('q2','f2',[0,2]);
+single('q3','f3',1);
+
+function save(){
+  localStorage.setItem('profealbertod-teci-u1-dt',document.getElementById('problem').value);
+  document.getElementById('saved').textContent='Definición guardada en este dispositivo.';
+}
+</script></body></html>
