@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>1.2 · Proceso de resolución de problemas tecnológicos · ProfeAlbertoD</title>
+<link rel="stylesheet" href="/profealbertod/css/style.css">
+</head>
+<body>
+<header class="topbar"><a class="brand" href="/profealbertod/">Profe<span>AlbertoD</span></a><nav><a href="../">Unidad 1</a><a href="../../">4.º ESO</a></nav></header>
+<main class="lesson">
+<style>
+.lesson{max-width:980px;margin:auto;padding:42px 20px 100px}.lesson-head{margin:20px 0 34px}.kicker{display:inline-flex;gap:8px;align-items:center;font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}.lesson-head h1{font-size:clamp(2.6rem,6vw,5.5rem);line-height:.92;letter-spacing:-.065em;margin:14px 0 18px;max-width:900px}.lesson-head p{font-size:1.12rem;color:var(--muted);max-width:760px;margin:0}.progress-wrap{display:flex;align-items:center;gap:14px;margin:30px 0 44px}.progress{height:7px;background:#e8ebee;border-radius:20px;overflow:hidden;flex:1}.progress i{display:block;width:20%;height:100%;background:var(--accent);transition:.3s}.step-count{font-size:.78rem;font-weight:800;color:var(--muted);white-space:nowrap}.screen{display:none}.screen.active{display:block}.tag{display:inline-block;background:#fff0eb;color:var(--accent);padding:7px 11px;border-radius:99px;font-weight:800;font-size:.75rem}.screen h2{font-size:clamp(2rem,4.5vw,4rem);line-height:.98;letter-spacing:-.055em;margin:18px 0}.screen p{font-size:1.08rem;color:var(--muted);max-width:790px}.scenario,.info,.feedback-box{background:#fff;border:1px solid var(--line);border-radius:22px;padding:28px;margin:28px 0}.scenario strong{color:var(--ink)}.phases{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:24px 0}.phase{padding:18px;border:2px solid var(--line);border-radius:16px;background:#fff;cursor:grab;user-select:none}.phase:hover{border-color:var(--accent)}.phase.selected{border-color:var(--accent);background:#fff8f5}.phase.correct{border-color:#2d9d61;background:#effaf4}.phase.wrong{border-color:#d65b5b;background:#fff2f2}.order-num{font-weight:900;color:var(--accent);margin-right:8px}.primary{border:0;border-radius:10px;padding:13px 19px;font:inherit;font-weight:800;cursor:pointer;background:var(--ink);color:#fff}.secondary{border:0;border-radius:10px;padding:13px 19px;font:inherit;font-weight:800;cursor:pointer;background:#e9ecef}.feedback{font-weight:800;min-height:26px;margin-top:14px}.decision-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:24px 0}.decision{border:2px solid var(--line);background:#fff;border-radius:17px;padding:20px;text-align:left;font:inherit;cursor:pointer}.decision:hover{border-color:var(--accent)}.decision.correct{border-color:#2d9d61;background:#effaf4}.decision.wrong{border-color:#d65b5b;background:#fff2f2}.repair{display:grid;grid-template-columns:1fr 1fr;gap:14px}.mini{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px}.mini b{display:block;margin-bottom:7px}.mini span{color:var(--muted)}.reveal{background:var(--ink);color:#fff;border-radius:22px;padding:28px;margin-top:24px}.reveal p{color:#d8dee4}.idea{border-left:5px solid var(--accent);padding:15px 20px;background:#fff;margin:25px 0}.controls{display:flex;justify-content:space-between;gap:12px;margin-top:42px}.controls button{border:0;border-radius:10px;padding:13px 19px;font:inherit;font-weight:800;cursor:pointer}.next{background:var(--ink);color:#fff}.back{background:#e9ecef}.result{font-size:1.2rem;font-weight:800;margin-top:18px}@media(max-width:700px){.phases,.decision-grid,.repair{grid-template-columns:1fr}}
+</style>
+
+<div class="lesson-head"><span class="kicker">Unidad 1 · 1.2</span><h1>Proceso de resolución de problemas tecnológicos.</h1><p>Ya hemos detectado una necesidad. Ahora tenemos que convertirla en un proceso organizado para llegar a una solución.</p></div>
+<div class="progress-wrap"><div class="progress"><i id="bar"></i></div><span class="step-count" id="count">1 / 5</span></div>
+
+<section class="screen active">
+<span class="tag">01 · ACTIVAMOS</span><h2>¿Construimos ya?</h2>
+<p>En 1.1 detectaste una necesidad. Imagina que tu equipo ha encontrado un problema real en el instituto y tiene una idea que podría solucionarlo.</p>
+<div class="scenario"><strong>Situación:</strong> el equipo quiere empezar a fabricar un prototipo mañana mismo porque “ya sabemos qué hacer”.</div>
+<p><strong>¿Qué debería hacer antes de construir?</strong></p>
+<div class="decision-grid">
+<button class="decision" onclick="decision(this,true,'Exacto. Antes de construir necesitamos analizar el problema, buscar información y planificar.')">Investigar y planificar el proceso.</button>
+<button class="decision" onclick="decision(this,false,'Una idea puede ser un buen comienzo, pero necesitamos comprobarla y desarrollarla antes de fabricar.')">Empezar a construir inmediatamente.</button>
+<button class="decision" onclick="decision(this,false,'Todavía no sabemos si esa solución será adecuada.')">Comprar materiales y probar suerte.</button>
+<button class="decision" onclick="decision(this,false,'Primero debemos comprender el problema y organizar el proceso.')">Elegir la herramienta más moderna.</button>
+</div><div class="feedback"></div>
+<div class="idea"><strong>Idea clave:</strong> resolver un problema tecnológico es un proceso, no un salto directo de problema a objeto.</div>
+</section>
+
+<section class="screen">
+<span class="tag">02 · DESCUBRIMOS</span><h2>Un proyecto tiene un recorrido.</h2>
+<p>El proceso tecnológico organiza las acciones que realizamos para pasar de una necesidad a una solución. <strong>El orden importa</strong>, porque cada fase aporta información para la siguiente.</p>
+<div class="info"><strong>Tu misión:</strong> ordena las siguientes fases. Haz clic en ellas en el orden que consideres correcto.</div>
+<div class="phases" id="phases"></div>
+<button class="secondary" onclick="resetOrder()">Reiniciar</button>
+<div class="result" id="orderResult"></div>
+<div class="reveal"><strong>Una secuencia posible</strong><p>Identificación del problema → investigación → generación de ideas → diseño → construcción → evaluación.</p></div>
+</section>
+
+<section class="screen">
+<span class="tag">03 · TOMAMOS DECISIONES</span><h2>¿En qué fase estamos?</h2>
+<p>Lee cada situación y decide qué acción corresponde mejor a ese momento del proyecto.</p>
+<div class="scenario"><strong>Situación:</strong> el equipo necesita saber cuánto pesa un objeto que quiere transportar y qué materiales podrían soportar ese peso.</div>
+<div class="decision-grid">
+<button class="decision" onclick="decision(this,false,'Aquí todavía no estamos construyendo. Necesitamos obtener información para comprender el problema.')">Construcción</button>
+<button class="decision" onclick="decision(this,true,'Correcto. Estamos buscando datos que nos permitan tomar decisiones fundamentadas.')">Investigación</button>
+<button class="decision" onclick="decision(this,false,'Primero necesitamos conocer los datos que condicionan el diseño.')">Evaluación final</button>
+<button class="decision" onclick="decision(this,false,'Aún no estamos eligiendo entre diseños: estamos obteniendo información.')">Presentación</button>
+</div><div class="feedback"></div>
+<div class="scenario"><strong>Ahora:</strong> el equipo tiene tres posibles diseños y compara cuál utiliza menos material manteniendo la resistencia necesaria.</div>
+<div class="decision-grid">
+<button class="decision" onclick="decision(this,true,'Exacto. Estamos comparando alternativas antes de decidir qué diseño desarrollar.')">Diseño y selección</button>
+<button class="decision" onclick="decision(this,false,'No estamos fabricando todavía.')">Construcción</button>
+<button class="decision" onclick="decision(this,false,'La evaluación del resultado vendrá después de construir.')">Evaluación final</button>
+<button class="decision" onclick="decision(this,false,'La investigación busca información; aquí estamos comparando propuestas.')">Investigación</button>
+</div><div class="feedback"></div>
+</section>
+
+<section class="screen">
+<span class="tag">04 · DETECTAMOS ERRORES</span><h2>Un proyecto también aprende de sus errores.</h2>
+<p>Un equipo ha construido un prototipo que no funciona como esperaba. Uno de sus miembros propone simplemente volver a fabricarlo igual.</p>
+<div class="repair">
+<div class="mini"><b>OPCIÓN A</b><span>Repetir exactamente el mismo diseño y esperar que esta vez funcione.</span><br><button class="decision" style="margin-top:16px" onclick="decision(this,false,'Si repetimos el proceso sin analizar qué falló, probablemente repetiremos el mismo problema.')">Elegir</button></div>
+<div class="mini"><b>OPCIÓN B</b><span>Analizar el resultado, localizar el problema y modificar el diseño.</span><br><button class="decision" style="margin-top:16px" onclick="decision(this,true,'Exacto. La evaluación permite detectar fallos y mejorar la solución.')">Elegir</button></div>
+</div><div class="feedback"></div>
+<div class="idea"><strong>Quédate con esto:</strong> evaluar no significa poner una nota. Significa comprobar si la solución funciona y qué podemos mejorar.</div>
+</section>
+
+<section class="screen">
+<span class="tag">05 · CERRAMOS</span><h2>Ahora ya puedes ver el proceso completo.</h2>
+<p>Una necesidad nos pone en marcha. A partir de ahí investigamos, generamos alternativas, diseñamos, construimos y evaluamos. Si algo no funciona, volvemos atrás y mejoramos.</p>
+<div class="reveal"><strong>Idea clave</strong><p>El proceso tecnológico es organizado, pero también puede ser iterativo: evaluar un resultado puede llevarnos a modificar el diseño y volver a construir.</p></div>
+<div class="idea"><strong>En el siguiente apartado:</strong> aprenderemos a investigar una necesidad y a decidir qué información necesitamos antes de diseñar.</div>
+</section>
+
+<div class="controls"><button class="back" onclick="go(-1)">← Atrás</button><button class="next" id="next" onclick="go(1)">Continuar →</button></div>
+</main>
+<footer><span>ProfeAlbertoD</span> · Unidad 1 · Tecnología 4.º ESO</footer>
+
+<script>
+let current=0;
+const screens=[...document.querySelectorAll('.screen')],bar=document.getElementById('bar'),count=document.getElementById('count');
+const phasesData=['Identificación del problema','Investigación','Generación de ideas','Diseño','Construcción','Evaluación'];
+let order=[];
+function render(){screens.forEach((s,i)=>s.classList.toggle('active',i===current));bar.style.width=((current+1)/screens.length*100)+'%';count.textContent=(current+1)+' / '+screens.length;document.getElementById('next').textContent=current===screens.length-1?'Volver a la Unidad 1 →':'Continuar →';window.scrollTo({top:0,behavior:'smooth'});}
+function go(n){if(current===screens.length-1&&n>0){location.href='../';return;}current=Math.max(0,Math.min(screens.length-1,current+n));render();}
+function decision(btn,ok,msg){const grid=btn.closest('.decision-grid')||btn.parentElement;grid.querySelectorAll('.decision').forEach(b=>b.classList.remove('correct','wrong'));btn.classList.add(ok?'correct':'wrong');let f=grid.nextElementSibling;if(f&&f.classList.contains('feedback'))f.textContent=msg;else if(grid.parentElement.nextElementSibling?.classList.contains('feedback'))grid.parentElement.nextElementSibling.textContent=msg;}
+function resetOrder(){order=[];drawPhases();document.getElementById('orderResult').textContent='';}
+function drawPhases(){const box=document.getElementById('phases');box.innerHTML='';phasesData.forEach((p,i)=>{const b=document.createElement('button');b.className='phase';b.innerHTML='<span class="order-num">'+(order.length+1)+'</span>'+p;b.onclick=()=>pick(i,b);if(order.includes(i))b.classList.add('correct');box.appendChild(b);});}
+function pick(i,b){if(order.includes(i))return;order.push(i);b.classList.add('correct');b.querySelector('.order-num').textContent=order.length;const result=document.getElementById('orderResult');if(order.length===phasesData.length){const ok=order.every((v,i)=>v===i);result.textContent=ok?'✓ ¡Perfecto! Has ordenado correctamente el proceso.':'↻ Has completado la secuencia. Revisa la propuesta y vuelve a intentarlo si quieres mejorarla.';result.style.color=ok?'#23824d':'var(--accent)';}else result.textContent='Fases colocadas: '+order.length+' / '+phasesData.length;}
+drawPhases();render();
+</script>
+</body></html>
