@@ -9,4 +9,62 @@
 <section class="card"><h2>5 · El error se convierte en información</h2><p>Un robot se desvía de la trayectoria prevista. Completa la secuencia:</p><div class="types"><div class="type"><b>1</b><br>Detectar</div><div class="type"><b>2</b><br>Analizar</div><div class="type"><b>3</b><br>Modificar</div><div class="type"><b>4</b><br>Volver a probar</div></div><p>Explica qué podría ocurrir si repetimos exactamente el mismo diseño.</p><textarea id="error"></textarea></section>
 <section class="card"><h2>6 · Trabajo interdisciplinar</h2><p>Un sistema doméstico de gestión energética puede combinar electricidad y electrónica, programación, análisis de datos y economía. Escribe qué aportaría cada área.</p><textarea id="inter"></textarea><button class="button" onclick="save()">Guardar respuestas</button><p id="saved"></p></section>
 <div class="next"><a class="alt" href="../02-design-thinking/index.html">← Design Thinking</a><a href="../04-documentacion/index.html">Siguiente · Documentación →</a></div></main><footer>ProfeAlbertoD · Tecnología e Ingeniería · 1.º Bachillerato</footer>
-<script>function single(id,f,correctIndex=0){document.querySelectorAll('#'+id+' .choice').forEach((b,index)=>b.onclick=()=>{document.querySelectorAll('#'+id+' .choice').forEach(x=>x.classList.remove('selected','correct','incorrect'));b.classList.add('selected');b.classList.add(index===correctIndex?'correct':'incorrect');const el=document.getElementById(f);el.classList.add('show');el.textContent=index===correctIndex?el.dataset.ok:el.dataset.no})}function multi(id,f,correctIndexes){const buttons=[...document.querySelectorAll('#'+id+' .choice')];buttons.forEach(b=>b.onclick=()=>{b.classList.toggle('selected');b.classList.remove('correct','incorrect')});const check=document.createElement('button');check.className='button';check.type='button';check.textContent='Comprobar selección';document.getElementById(id).after(check);check.onclick=()=>{const selected=buttons.map((b,i)=>b.classList.contains('selected')?i:null).filter(i=>i!==null);const ok=selected.length===correctIndexes.length&&selected.every(i=>correctIndexes.includes(i));buttons.forEach((b,i)=>{b.classList.remove('correct','incorrect');if(b.classList.contains('selected'))b.classList.add(correctIndexes.includes(i)?'correct':'incorrect')});const el=document.getElementById(f);el.classList.add('show');el.textContent=ok?el.dataset.ok:el.dataset.no}} function save(){localStorage.setItem('profealbertod-teci-u1-creatividad',JSON.stringify({ideas:ideas.value,error:error.value,inter:inter.value}));saved.textContent='Respuestas guardadas en este dispositivo.'}
+<script>
+function single(id,f,correctIndex=0){
+  const buttons=[...document.querySelectorAll('#'+id+' .choice')];
+  buttons.forEach((b,index)=>{
+    b.type='button';
+    b.onclick=()=>{
+      buttons.forEach(x=>x.classList.remove('selected','correct','incorrect'));
+      b.classList.add('selected',index===correctIndex?'correct':'incorrect');
+      const el=document.getElementById(f);
+      el.classList.add('show');
+      el.textContent=index===correctIndex?el.dataset.ok:el.dataset.no;
+    };
+  });
+}
+function multi(id,f,correctIndexes){
+  const box=document.getElementById(id);
+  const buttons=[...box.querySelectorAll('.choice')];
+  let check=document.getElementById('check-'+id);
+  if(!check){
+    check=document.createElement('button');
+    check.id='check-'+id;
+    check.type='button';
+    check.className='button';
+    check.textContent='Comprobar selección';
+    box.after(check);
+  }
+  buttons.forEach(b=>{
+    b.type='button';
+    b.onclick=()=>{
+      b.classList.toggle('selected');
+      b.classList.remove('correct','incorrect');
+    };
+  });
+  check.onclick=()=>{
+    const selected=buttons.map((b,i)=>b.classList.contains('selected')?i:null).filter(i=>i!==null);
+    const ok=selected.length===correctIndexes.length && selected.every(i=>correctIndexes.includes(i));
+    buttons.forEach((b,i)=>{
+      b.classList.remove('correct','incorrect');
+      b.classList.add(correctIndexes.includes(i)?'correct':'incorrect');
+    });
+    const el=document.getElementById(f);
+    el.classList.add('show');
+    el.textContent=ok?el.dataset.ok:el.dataset.no;
+  };
+}
+
+single('q1','f1',0);
+single('q2','f2',1);
+multi('q3','f3',[0,1,2,3]);
+
+function save(){
+  localStorage.setItem('profealbertod-teci-u1-creatividad',JSON.stringify({
+    ideas:document.getElementById('ideas').value,
+    error:document.getElementById('error').value,
+    inter:document.getElementById('inter').value
+  }));
+  document.getElementById('saved').textContent='Respuestas guardadas en este dispositivo.';
+}
+</script></body></html>
