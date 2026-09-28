@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>1.5 · Gestión colaborativa de proyectos · ProfeAlbertoD</title>
+<link rel="stylesheet" href="/profealbertod/css/style.css">
+<style>
+.lesson{max-width:980px;margin:auto;padding:42px 20px 100px}.lesson-head{margin:20px 0 34px}.kicker{font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}.lesson-head h1{font-size:clamp(2.8rem,6vw,5.4rem);line-height:.92;letter-spacing:-.065em;margin:14px 0 18px;max-width:850px}.lesson-head p,.screen p{font-size:1.08rem;color:var(--muted);max-width:790px}
+.progress-wrap{display:flex;align-items:center;gap:14px;margin:30px 0 44px}.progress{height:7px;background:#e8ebee;border-radius:20px;overflow:hidden;flex:1}.progress i{display:block;width:14.2%;height:100%;background:var(--accent);transition:.3s}.step{font-size:.78rem;font-weight:800;color:var(--muted)}
+.screen{display:none}.screen.active{display:block}.tag{display:inline-block;background:#fff0eb;color:var(--accent);padding:7px 11px;border-radius:99px;font-weight:800;font-size:.75rem}.screen h2{font-size:clamp(2rem,4.5vw,4rem);line-height:.98;letter-spacing:-.055em;margin:18px 0}
+.panel,.task,.criteria{background:#fff;border:1px solid var(--line);border-radius:22px;padding:28px;margin:28px 0}.idea{border-left:5px solid var(--accent);padding:15px 20px;background:#fff;margin:25px 0}
+.choices{display:grid;gap:12px;margin:22px 0}.choice{border:2px solid var(--line);background:#fff;border-radius:15px;padding:18px;text-align:left;cursor:pointer;font:inherit}.choice:hover{border-color:var(--accent)}.choice.correct{border-color:#2d9d61;background:#effaf4}.choice.wrong{border-color:#d65b5b;background:#fff2f2}.feedback{min-height:27px;font-weight:700;margin-top:10px}
+.roles{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:22px 0}.role{border:1px solid var(--line);border-radius:16px;padding:18px;background:#fff;cursor:pointer}.role:hover,.role.active{border-color:var(--accent);background:#fff8f5}.role b{display:block;color:var(--accent);font-size:1.05rem;margin-bottom:5px}.role span{color:var(--muted);font-size:.92rem}
+.tasks{display:grid;gap:10px;margin:20px 0}.taskrow{display:grid;grid-template-columns:1fr 140px 140px;gap:10px;align-items:center}.taskrow div{padding:13px 14px;border:1px solid var(--line);border-radius:10px;background:#fff}.taskrow input,.taskrow select{width:100%;padding:11px;border:1px solid var(--line);border-radius:9px;font:inherit;background:#fff}
+.toolgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:22px 0}.tool{border:1px solid var(--line);border-radius:16px;padding:18px;background:#fff;cursor:pointer}.tool:hover,.tool.active{border-color:var(--accent);background:#fff8f5}.tool b{display:block;font-size:1.05rem}.tool span{display:block;color:var(--muted);font-size:.88rem;margin-top:5px}
+.timeline{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:22px 0}.day{border:1px solid var(--line);border-radius:14px;padding:15px;background:#fff;text-align:center}.day b{display:block;color:var(--accent);margin-bottom:7px}.day span{font-size:.82rem;color:var(--muted)}
+textarea{width:100%;min-height:130px;border:1px solid var(--line);border-radius:12px;padding:15px;font:inherit;resize:vertical;box-sizing:border-box}.save{border:0;border-radius:10px;padding:13px 19px;font:inherit;font-weight:800;cursor:pointer;background:var(--ink);color:#fff;margin-top:14px}.saved{display:none;color:#23824d;font-weight:800;margin-top:10px}
+.result{background:var(--ink);color:#fff;border-radius:22px;padding:28px;margin-top:24px}.result p{color:#d8dee4}.controls{display:flex;justify-content:space-between;gap:12px;margin-top:42px}.controls button{border:0;border-radius:10px;padding:13px 19px;font:inherit;font-weight:800;cursor:pointer}.back{background:#e9ecef}.next{background:var(--ink);color:#fff}
+@media(max-width:700px){.roles,.toolgrid{grid-template-columns:1fr 1fr}.taskrow{grid-template-columns:1fr}.timeline{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="/profealbertod/">Profe<span>AlbertoD</span></a><nav><a href="../">Unidad 1</a><a href="../../">4.º ESO</a></nav></header>
+
+<main class="lesson">
+<div class="lesson-head"><span class="kicker">Unidad 1 · 1.5</span><h1>Gestión colaborativa de proyectos.</h1><p>Un proyecto tecnológico no sale adelante porque una persona haga todo. Necesitamos compartir ideas, repartir responsabilidades, organizar tareas, controlar el tiempo y resolver los desacuerdos.</p></div>
+
+<div class="progress-wrap"><div class="progress"><i id="bar"></i></div><span class="step" id="step">1 / 7</span></div>
+
+<section class="screen active">
+<span class="tag">01 · TRABAJAMOS EN EQUIPO</span><h2>¿Grupo o equipo?</h2>
+<p>Trabajar colaborativamente significa compartir ideas, repartir tareas y asumir responsabilidades para alcanzar un objetivo común.</p>
+<div class="panel">
+<strong>Un equipo tiene que construir un prototipo.</strong>
+<div class="choices">
+<button class="choice" onclick="answer(this,true,'Exacto. Un buen equipo necesita comunicación, organización, participación, respeto y responsabilidad individual.')">Cada persona aporta, pero el trabajo se coordina hacia un objetivo común.</button>
+<button class="choice" onclick="answer(this,false,'Repartir tareas no basta. Las partes del proyecto deben estar coordinadas y las personas deben compartir el objetivo.')">Cada persona hace una parte sin necesidad de comunicarse.</button>
+<button class="choice" onclick="answer(this,false,'Pensar diferente no impide colaborar. De hecho, las distintas aportaciones pueden mejorar el proyecto.')">Todos deben pensar exactamente lo mismo.</button>
+</div><div class="feedback"></div>
+</div>
+<div class="idea"><strong>Idea clave:</strong> colaborar no significa trabajar todos en lo mismo. Significa coordinar aportaciones diferentes para conseguir un objetivo común.</div>
+</section>
+
+<section class="screen">
+<span class="tag">02 · ROLES Y RESPONSABILIDADES</span><h2>Cada tarea necesita una responsabilidad.</h2>
+<p>Los roles ayudan a organizar el proyecto. Pueden cambiar durante el proceso para que todas las personas tengan la oportunidad de participar en diferentes tareas.</p>
+<div class="panel"><strong>Relaciona mentalmente cada rol con su función.</strong>
+<div class="roles">
+<div class="role" onclick="role(this,'Coordinar el trabajo y comprobar que se cumplen los objetivos.')"><b>Coordinación</b><span>Haz clic para comprobar.</span></div>
+<div class="role" onclick="role(this,'Desarrollar ideas, bocetos y soluciones.')"><b>Diseño</b><span>Haz clic para comprobar.</span></div>
+<div class="role" onclick="role(this,'Realizar el montaje o desarrollo del prototipo.')"><b>Construcción</b><span>Haz clic para comprobar.</span></div>
+<div class="role" onclick="role(this,'Registrar el proceso y preparar la información del proyecto.')"><b>Documentación</b><span>Haz clic para comprobar.</span></div>
+</div><div class="result" id="roleResult">Elige un rol para descubrir qué responsabilidad tiene.</div>
+</div>
+<div class="idea"><strong>Importante:</strong> repartir roles no significa encasillar a una persona durante todo el proyecto. Los roles pueden cambiar.</div>
+</section>
+
+<section class="screen">
+<span class="tag">03 · PLANIFICAMOS</span><h2>Una tarea sin responsable puede quedarse en el aire.</h2>
+<p>Para cada tarea podemos indicar qué hay que hacer, quién se encargará, cuándo debe estar terminada y qué recursos necesita.</p>
+<div class="panel"><strong>El proyecto se retrasa porque nadie sabe quién hace qué.</strong>
+<div class="tasks">
+<div class="taskrow"><div>Investigar soluciones existentes</div><select><option>Responsable...</option><option>Lucía</option><option>Mario</option><option>Salma</option></select><input type="text" placeholder="Fecha límite"></div>
+<div class="taskrow"><div>Realizar el boceto</div><select><option>Responsable...</option><option>Lucía</option><option>Mario</option><option>Salma</option></select><input type="text" placeholder="Fecha límite"></div>
+<div class="taskrow"><div>Construir el prototipo</div><select><option>Responsable...</option><option>Lucía</option><option>Mario</option><option>Salma</option></select><input type="text" placeholder="Fecha límite"></div>
+</div>
+<button class="save" onclick="checkPlan()">Comprobar planificación</button><div class="feedback" id="planFeedback"></div>
+</div>
+<div class="idea"><strong>Actividad del cuaderno:</strong> en una planificación con sentido, las tareas deben tener un orden y debemos distinguir cuáles pueden realizarse simultáneamente y cuáles dependen de otras.</div>
+</section>
+
+<section class="screen">
+<span class="tag">04 · HERRAMIENTAS DIGITALES</span><h2>La herramienta debe ayudar al equipo.</h2>
+<p>Las herramientas digitales permiten compartir información, almacenar archivos, crear listas de tareas, organizar calendarios, comunicarse y registrar avances.</p>
+<div class="panel"><strong>¿Para qué utilizarías cada herramienta?</strong>
+<div class="toolgrid">
+<div class="tool" onclick="tool(this,'Documento compartido','Crear y editar información conjuntamente.')"><b>Documento compartido</b><span>Información del proyecto</span></div>
+<div class="tool" onclick="tool(this,'Almacenamiento','Guardar y compartir los archivos del proyecto.')"><b>Almacenamiento</b><span>Archivos</span></div>
+<div class="tool" onclick="tool(this,'Lista de tareas','Organizar qué queda pendiente y qué está realizado.')"><b>Lista de tareas</b><span>Seguimiento</span></div>
+<div class="tool" onclick="tool(this,'Calendario','Distribuir tareas y fechas límite.')"><b>Calendario</b><span>Tiempo</span></div>
+<div class="tool" onclick="tool(this,'Comunicación','Mantener al equipo informado.')"><b>Comunicación</b><span>Coordinación</span></div>
+<div class="tool" onclick="tool(this,'Registro de avances','Dejar constancia del progreso del proyecto.')"><b>Registro</b><span>Evolución</span></div>
+</div><div class="result" id="toolResult">Selecciona una herramienta.</div>
+</div>
+<div class="idea"><strong>Idea clave:</strong> no se trata de utilizar muchas herramientas, sino de elegir las que realmente faciliten el trabajo.</div>
+</section>
+
+<section class="screen">
+<span class="tag">05 · GESTIÓN DEL TIEMPO</span><h2>Diez días. Quince días de trabajo.</h2>
+<p>Un proyecto tiene un tiempo limitado. Por eso debemos dividir tareas, estimar su duración, establecer un orden, marcar fechas límite y revisar el progreso.</p>
+<div class="panel"><strong>Situación:</strong> un equipo tiene solo 10 días, pero su planificación suma 15 días.</div>
+<div class="timeline">
+<div class="day"><b>2 días</b><span>Investigación</span></div>
+<div class="day"><b>3 días</b><span>Diseño</span></div>
+<div class="day"><b>5 días</b><span>Construcción</span></div>
+<div class="day"><b>2 días</b><span>Pruebas</span></div>
+<div class="day"><b>3 días</b><span>Mejoras</span></div>
+</div>
+<div class="choices">
+<button class="choice" onclick="answer(this,true,'Correcto. Hay que reorganizar el trabajo: algunas tareas pueden solaparse cuando no dependen necesariamente unas de otras, y también hay que revisar prioridades y duración.')">Reorganizar tareas, buscar solapamientos posibles y revisar prioridades.</button>
+<button class="choice" onclick="answer(this,false,'No podemos solucionar un exceso de tiempo simplemente ignorando las tareas. Hay que revisar la planificación.')">Mantener la planificación y esperar que el equipo trabaje más rápido.</button>
+<button class="choice" onclick="answer(this,false,'Eliminar tareas sin analizar su importancia puede comprometer el proyecto.')">Eliminar al azar las tareas que parezcan menos importantes.</button>
+</div><div class="feedback"></div>
+<div class="idea"><strong>Idea clave:</strong> una tarea que no tiene responsable ni fecha límite puede acabar quedándose sin hacer.</div>
+</section>
+
+<section class="screen">
+<span class="tag">06 · RESOLVEMOS CONFLICTOS</span><h2>Desacuerdo no significa problema.</h2>
+<p>En un equipo pueden aparecer opiniones diferentes. El objetivo no es que todos piensen igual, sino ser capaces de colaborar para alcanzar un objetivo común.</p>
+<div class="panel"><strong>Dos personas del equipo quieren soluciones diferentes.</strong>
+<div class="choices">
+<button class="choice" onclick="answer(this,true,'Bien. Escuchar, explicar las razones con respeto, centrarse en el problema, buscar alternativas y llegar a un acuerdo.')">Escuchamos ambas propuestas, explicamos razones y buscamos una alternativa o acuerdo.</button>
+<button class="choice" onclick="answer(this,false,'El conflicto no se resuelve ignorando a una de las personas.')">Decidimos que una persona tiene que aceptar la idea de la otra.</button>
+<button class="choice" onclick="answer(this,false,'Centrarse en las personas puede aumentar el conflicto. Hay que centrarse en el problema.')">Discutimos quién tiene la culpa.</button>
+</div><div class="feedback"></div>
+</div>
+<div class="idea"><strong>Recuerda:</strong> tener opiniones diferentes puede ayudarnos a encontrar mejores soluciones.</div>
+</section>
+
+<section class="screen">
+<span class="tag">07 · CREAMOS EL EQUIPO</span><h2>Ahora organiza un proyecto.</h2>
+<p>Imagina que tu equipo debe resolver una necesidad real del centro. Diseña una pequeña organización del proyecto.</p>
+<div class="task"><strong>Tu ficha de equipo</strong>
+<textarea id="team" placeholder="Problema o necesidad que queremos resolver:
+
+Objetivo común:
+
+Coordinación:
+Diseño:
+Construcción:
+Documentación:
+
+Tres tareas iniciales:
+1.
+2.
+3.
+
+¿Cómo nos organizaremos para cumplir los plazos?
+¿Cómo resolveremos los desacuerdos?"></textarea>
+<button class="save" onclick="saveTeam()">Guardar mi planificación</button><div class="saved" id="saved">✓ Planificación guardada en este dispositivo.</div>
+</div>
+<div class="result"><strong>Qué debes recordar</strong><p>Equipo → roles → tareas → herramientas → tiempo → acuerdos.</p></div>
+<div class="idea"><strong>Siguiente paso:</strong> llevaremos el proyecto hacia el emprendimiento ecosocial y valoraremos qué impacto puede generar nuestra solución.</div>
+</section>
+
+<div class="controls"><button class="back" onclick="go(-1)">← Atrás</button><button class="next" onclick="go(1)" id="next">Continuar →</button></div>
+</main>
+<footer><span>ProfeAlbertoD</span> · Unidad 1 · Tecnología 4.º ESO</footer>
+
+<script>
+let current=0;
+const screens=[...document.querySelectorAll('.screen')],bar=document.getElementById('bar'),step=document.getElementById('step');
+const team=document.getElementById('team');
+if(team)team.value=localStorage.getItem('profealbertod-u1-1-5')||'';
+
+function render(){
+  screens.forEach((s,i)=>s.classList.toggle('active',i===current));
+  bar.style.width=((current+1)/screens.length*100)+'%';
+  step.textContent=(current+1)+' / '+screens.length;
+  document.getElementById('next').textContent=current===screens.length-1?'Volver a la Unidad 1 →':'Continuar →';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function go(n){
+  if(current===screens.length-1&&n>0){location.href='../index.html';return;}
+  current=Math.max(0,Math.min(screens.length-1,current+n));render();
+}
+function answer(btn,ok,msg){
+  const box=btn.parentElement;
+  box.querySelectorAll('.choice').forEach(b=>b.classList.remove('correct','wrong'));
+  btn.classList.add(ok?'correct':'wrong');
+  box.nextElementSibling.textContent=msg;
+}
+function role(el,msg){
+  document.querySelectorAll('.role').forEach(x=>x.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('roleResult').innerHTML='<strong>'+el.querySelector('b').textContent+'</strong><p>'+msg+'</p>';
+}
+function checkPlan(){
+  const fields=[...document.querySelectorAll('.taskrow select')];
+  const dates=[...document.querySelectorAll('.taskrow input')];
+  const ok=fields.every(x=>x.value!=='Responsable...')&&dates.every(x=>x.value.trim()!=='');
+  document.getElementById('planFeedback').textContent=ok?'✓ Cada tarea tiene responsable y fecha límite. Ahora habría que revisar si el orden y las dependencias tienen sentido.':'Faltan responsables o fechas límite. Una planificación necesita concretar quién hace cada tarea y cuándo debe estar terminada.';
+  document.getElementById('planFeedback').style.color=ok?'#23824d':'#b04b4b';
+}
+function tool(el,title,msg){
+  document.querySelectorAll('.tool').forEach(x=>x.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('toolResult').innerHTML='<strong>'+title+'</strong><p>'+msg+'</p>';
+}
+function saveTeam(){
+  const v=team.value.trim();if(!v)return;
+  localStorage.setItem('profealbertod-u1-1-5',v);
+  document.getElementById('saved').style.display='block';
+}
+render();
+</script>
+</body>
+</html>
