@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>1.6 · Emprendimiento ecosocial · ProfeAlbertoD</title>
+<link rel="stylesheet" href="/profealbertod/css/style.css">
+<style>
+.lesson{max-width:980px;margin:auto;padding:42px 20px 100px}.lesson-head{margin:20px 0 34px}.kicker{font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}.lesson-head h1{font-size:clamp(2.8rem,6vw,5.4rem);line-height:.92;letter-spacing:-.065em;margin:14px 0 18px;max-width:850px}.lesson-head p,.screen p{font-size:1.08rem;color:var(--muted);max-width:790px}
+.progress-wrap{display:flex;align-items:center;gap:14px;margin:30px 0 44px}.progress{height:7px;background:#e8ebee;border-radius:20px;overflow:hidden;flex:1}.progress i{display:block;width:14.2%;height:100%;background:var(--accent);transition:.3s}.step{font-size:.78rem;font-weight:800;color:var(--muted)}
+.screen{display:none}.screen.active{display:block}.tag{display:inline-block;background:#fff0eb;color:var(--accent);padding:7px 11px;border-radius:99px;font-weight:800;font-size:.75rem}.screen h2{font-size:clamp(2rem,4.5vw,4rem);line-height:.98;letter-spacing:-.055em;margin:18px 0}
+.panel,.task{background:#fff;border:1px solid var(--line);border-radius:22px;padding:28px;margin:28px 0}.idea{border-left:5px solid var(--accent);padding:15px 20px;background:#fff;margin:25px 0}
+.choices{display:grid;gap:12px;margin:22px 0}.choice{border:2px solid var(--line);background:#fff;border-radius:15px;padding:18px;text-align:left;cursor:pointer;font:inherit}.choice:hover{border-color:var(--accent)}.choice.correct{border-color:#2d9d61;background:#effaf4}.choice.wrong{border-color:#d65b5b;background:#fff2f2}.feedback{min-height:27px;font-weight:700;margin-top:10px}
+.value-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:22px 0}.value{border:1px solid var(--line);border-radius:16px;padding:18px;background:#fff;cursor:pointer}.value:hover,.value.active{border-color:var(--accent);background:#fff8f5}.value b{display:block;color:var(--accent);font-size:1.05rem}.value span{display:block;color:var(--muted);font-size:.86rem;margin-top:5px}
+.impact{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:22px 0}.impact-card{border:1px solid var(--line);border-radius:18px;padding:20px;background:#fff}.impact-card h3{margin:0 0 8px}.impact-card p{font-size:.95rem!important;margin:0}
+.pitch{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:22px 0}.pitch div{border:1px solid var(--line);border-radius:15px;padding:17px;background:#fff}.pitch b{color:var(--accent);display:block;margin-bottom:6px}
+textarea{width:100%;min-height:170px;border:1px solid var(--line);border-radius:12px;padding:15px;font:inherit;resize:vertical;box-sizing:border-box}.save{border:0;border-radius:10px;padding:13px 19px;font:inherit;font-weight:800;cursor:pointer;background:var(--ink);color:#fff;margin-top:14px}.saved{display:none;color:#23824d;font-weight:800;margin-top:10px}
+.result{background:var(--ink);color:#fff;border-radius:22px;padding:28px;margin-top:24px}.result p{color:#d8dee4}.controls{display:flex;justify-content:space-between;gap:12px;margin-top:42px}.controls button{border:0;border-radius:10px;padding:13px 19px;font:inherit;font-weight:800;cursor:pointer}.back{background:#e9ecef}.next{background:var(--ink);color:#fff}
+@media(max-width:700px){.value-grid,.impact,.pitch{grid-template-columns:1fr 1fr}}@media(max-width:500px){.value-grid,.impact,.pitch{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="/profealbertod/">Profe<span>AlbertoD</span></a><nav><a href="../">Unidad 1</a><a href="../../">4.º ESO</a></nav></header>
+
+<main class="lesson">
+<div class="lesson-head"><span class="kicker">Unidad 1 · 1.6</span><h1>Emprendimiento ecosocial.</h1><p>Una solución tecnológica puede hacer mucho más que funcionar. Puede resolver una necesidad, generar valor, mejorar la vida de las personas y reducir su impacto sobre el entorno.</p></div>
+
+<div class="progress-wrap"><div class="progress"><i id="bar"></i></div><span class="step" id="step">1 / 7</span></div>
+
+<section class="screen active">
+<span class="tag">01 · EMPRENDER E INNOVAR</span><h2>¿Qué significa emprender?</h2>
+<p>Emprender consiste en identificar una necesidad o un problema y desarrollar una solución que aporte valor. La innovación puede crear soluciones nuevas o mejorar las que ya existen.</p>
+<div class="panel">
+<strong>¿Cuál de estas propuestas puede ser una innovación tecnológica?</strong>
+<div class="choices">
+<button class="choice" onclick="answer(this,true,'Sí. Mejorar una solución existente también puede ser innovación.')">Modificar un producto para que consuma menos recursos.</button>
+<button class="choice" onclick="answer(this,true,'Sí. Ofrecer una solución diferente a un problema también puede ser innovación.')">Desarrollar una forma diferente de resolver un problema.</button>
+<button class="choice" onclick="answer(this,false,'No es necesario que una innovación sea completamente nueva.')">Solo inventar algo que nunca haya existido.</button>
+</div><div class="feedback"></div>
+</div>
+<div class="idea"><strong>Idea clave:</strong> emprender no es simplemente tener una idea. Es detectar una necesidad o problema y desarrollar una solución que aporte valor.</div>
+</section>
+
+<section class="screen">
+<span class="tag">02 · ECOSOCIAL</span><h2>Una solución puede tener tres caras.</h2>
+<p>El emprendimiento ecosocial busca un equilibrio entre tres aspectos: mejorar la vida de las personas, reducir el impacto ambiental y ser viable económicamente.</p>
+<div class="impact">
+<div class="impact-card"><h3>Social</h3><p>Mejorar la vida de las personas o de la comunidad.</p></div>
+<div class="impact-card"><h3>Ambiental</h3><p>Reducir el impacto sobre el medio ambiente.</p></div>
+<div class="impact-card"><h3>Económico</h3><p>Ser viable y poder mantenerse en el tiempo.</p></div>
+</div>
+<div class="panel"><strong>Un centro quiere cambiar su sistema de transporte de agua.</strong>
+<div class="choices">
+<button class="choice" onclick="answer(this,true,'Correcto. Una propuesta ecosocial debe considerar simultáneamente los aspectos social, ambiental y económico.')">Comparar las opciones teniendo en cuenta los tres aspectos.</button>
+<button class="choice" onclick="answer(this,false,'El impacto ambiental es importante, pero no es el único aspecto que debemos considerar.')">Elegir únicamente la opción con menor impacto ambiental.</button>
+<button class="choice" onclick="answer(this,false,'El menor coste inicial no garantiza que una solución sea viable o sostenible.')">Elegir siempre la opción con menor coste.</button>
+</div><div class="feedback"></div>
+</div>
+</section>
+
+<section class="screen">
+<span class="tag">03 · CREACIÓN DE VALOR</span><h2>¿Dónde está el valor?</h2>
+<p>Un proyecto tecnológico crea valor cuando produce una mejora respecto a la situación inicial. Ese valor puede ser económico, social, ambiental o tecnológico.</p>
+<div class="value-grid">
+<div class="value" onclick="valueCard(this,'Económico','Puede permitir ahorrar o generar recursos.')"><b>E</b><span>Económico</span></div>
+<div class="value" onclick="valueCard(this,'Social','Puede mejorar la vida de las personas.')"><b>S</b><span>Social</span></div>
+<div class="value" onclick="valueCard(this,'Ambiental','Puede reducir el impacto sobre el entorno.')"><b>A</b><span>Ambiental</span></div>
+<div class="value" onclick="valueCard(this,'Tecnológico','Puede mejorar una solución existente.')"><b>T</b><span>Tecnológico</span></div>
+</div>
+<div class="result" id="valueResult">Haz clic en cada tipo de valor para ver qué significa.</div>
+<div class="idea"><strong>Pregunta clave:</strong> antes de desarrollar una idea debemos comprobar que responde a una necesidad real y que la solución es útil y viable.</div>
+</section>
+
+<section class="screen">
+<span class="tag">04 · IMPACTO EN LA COMUNIDAD</span><h2>Todo proyecto deja huella.</h2>
+<p>Las soluciones tecnológicas pueden tener consecuencias sobre las personas, la economía y el medio ambiente. Por eso debemos analizar tanto los efectos positivos como los posibles efectos negativos.</p>
+<div class="panel"><strong>Reto:</strong> un centro instala un sistema de acceso mediante una aplicación móvil.</div>
+<div class="choices">
+<button class="choice" onclick="answer(this,true,'Bien. Una solución puede aportar mejoras, pero también debemos detectar a quién puede dejar fuera y modificarla para reducir ese efecto.')">Analizar sus beneficios y detectar si existe algún problema de accesibilidad.</button>
+<button class="choice" onclick="answer(this,false,'Que una solución funcione técnicamente no significa que tenga el mismo impacto para todas las personas.')">Dar por hecho que es adecuada porque funciona correctamente.</button>
+<button class="choice" onclick="answer(this,false,'La accesibilidad forma parte de las consecuencias que debemos analizar.')">Ignorar la accesibilidad porque no afecta al funcionamiento técnico.</button>
+</div><div class="feedback"></div>
+<div class="idea"><strong>Piensa:</strong> una buena solución tecnológica también debe considerar sus consecuencias y tratar de reducir los efectos negativos.</div>
+</section>
+
+<section class="screen">
+<span class="tag">05 · DECISIONES RESPONSABLES</span><h2>Más barato no siempre significa mejor.</h2>
+<p>Imagina dos soluciones: una cuesta menos, pero consume más energía, dura menos y genera más residuos. La otra cuesta más, pero tiene un menor impacto.</p>
+<div class="panel"><strong>¿Qué información necesitarías antes de decidir?</strong>
+<div class="choices">
+<button class="choice" onclick="answer(this,true,'Correcto. Para tomar una decisión responsable necesitamos valorar las consecuencias a corto y largo plazo, no solo el precio inicial.')">Coste inicial, consumo, duración, residuos e impacto a largo plazo.</button>
+<button class="choice" onclick="answer(this,false,'El precio inicial es solo uno de los factores que podemos valorar.')">Únicamente el precio de compra.</button>
+<button class="choice" onclick="answer(this,false,'Una decisión responsable debe comparar varias consecuencias.')">Solo cuánto tarda en construirse.</button>
+</div><div class="feedback"></div>
+</div>
+<div class="idea"><strong>Actividad:</strong> defiende una decisión tecnológica utilizando al menos tres argumentos diferentes y considerando consecuencias a corto y largo plazo.</div>
+</section>
+
+<section class="screen">
+<span class="tag">06 · COMUNICAMOS</span><h2>Una buena idea hay que saber explicarla.</h2>
+<p>Presentar un proyecto permite explicar el problema, la solución propuesta y el valor que puede aportar.</p>
+<div class="pitch">
+<div><b>01 · Problema</b>¿Qué necesidad hemos detectado?</div>
+<div><b>02 · Solución</b>¿Qué proponemos?</div>
+<div><b>03 · Funcionamiento</b>¿Cómo funcionará?</div>
+<div><b>04 · Recursos</b>¿Qué necesitamos?</div>
+<div><b>05 · Beneficios</b>¿Qué valor puede aportar?</div>
+</div>
+<div class="panel"><strong>Ordena una presentación convincente.</strong>
+<div class="choices">
+<button class="choice" onclick="answer(this,true,'Exacto. Primero situamos el problema y después explicamos la solución, su funcionamiento, los recursos y sus beneficios.')">Problema → solución → funcionamiento → recursos → beneficios.</button>
+<button class="choice" onclick="answer(this,false,'Antes de explicar la solución necesitamos dejar claro qué problema estamos intentando resolver.')">Solución → problema → beneficios → recursos → funcionamiento.</button>
+</div><div class="feedback"></div>
+</div>
+</section>
+
+<section class="screen">
+<span class="tag">07 · EL RETO TECNOLÓGICO</span><h2>Ahora une todo lo aprendido.</h2>
+<p>En tu centro existe un problema que podría mejorar mediante una solución tecnológica. Desarrolla una propuesta completa sin construir todavía el prototipo.</p>
+<div class="task"><strong>Mi propuesta ecosocial</strong>
+<textarea id="project" placeholder="Problema y necesidad detectada:
+
+Información que necesitaría conocer:
+
+Solución A:
+
+Solución B:
+
+Solución que elegiría y por qué:
+
+¿Qué recursos necesitaría?
+
+¿Qué valor aporta?
+
+¿Qué mejora social o ambiental incorporaría?
+
+¿Cómo presentaría el proyecto?"></textarea>
+<button class="save" onclick="saveProject()">Guardar mi propuesta</button><div class="saved" id="saved">✓ Propuesta guardada en este dispositivo.</div>
+</div>
+<div class="result"><strong>La idea que cierra la unidad</strong><p>Detectar una necesidad → investigar → generar ideas → seleccionar → organizar el equipo → valorar el impacto → comunicar la solución.</p></div>
+<div class="idea"><strong>Has llegado al final:</strong> ahora ya puedes plantear un proyecto tecnológico desde una necesidad real hasta una propuesta argumentada.</div>
+</section>
+
+<div class="controls"><button class="back" onclick="go(-1)">← Atrás</button><button class="next" onclick="go(1)" id="next">Continuar →</button></div>
+</main>
+<footer><span>ProfeAlbertoD</span> · Unidad 1 · Tecnología 4.º ESO</footer>
+
+<script>
+let current=0;
+const screens=[...document.querySelectorAll('.screen')],bar=document.getElementById('bar'),step=document.getElementById('step');
+const project=document.getElementById('project');
+if(project)project.value=localStorage.getItem('profealbertod-u1-1-6')||'';
+
+function render(){
+  screens.forEach((s,i)=>s.classList.toggle('active',i===current));
+  bar.style.width=((current+1)/screens.length*100)+'%';
+  step.textContent=(current+1)+' / '+screens.length;
+  document.getElementById('next').textContent=current===screens.length-1?'Volver a la Unidad 1 →':'Continuar →';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function go(n){
+  if(current===screens.length-1&&n>0){location.href='../index.html';return;}
+  current=Math.max(0,Math.min(screens.length-1,current+n));render();
+}
+function answer(btn,ok,msg){
+  const box=btn.parentElement;
+  box.querySelectorAll('.choice').forEach(b=>b.classList.remove('correct','wrong'));
+  btn.classList.add(ok?'correct':'wrong');
+  box.nextElementSibling.textContent=msg;
+}
+function valueCard(el,title,msg){
+  document.querySelectorAll('.value').forEach(x=>x.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('valueResult').innerHTML='<strong>'+title+'</strong><p>'+msg+'</p>';
+}
+function saveProject(){
+  const v=project.value.trim();if(!v)return;
+  localStorage.setItem('profealbertod-u1-1-6',v);
+  document.getElementById('saved').style.display='block';
+}
+render();
+</script>
+</body>
+</html>
