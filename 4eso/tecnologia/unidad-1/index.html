@@ -1,10 +1,80 @@
 <!DOCTYPE html>
-<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Unidad 1 · ProfeAlbertoD</title><link rel="stylesheet" href="../../../../css/style.css"></head>
-<body><header class="topbar"><a class="brand" href="../../../../">Profe<span>AlbertoD</span></a><nav><a href="../../">4.º ESO</a></nav></header>
-<main><section class="hero"><div class="hero-copy"><p class="eyebrow">UNIDAD 01 · 4.º ESO</p><h1>Gestión de proyectos<br><span>y emprendimiento ecosocial.</span></h1><p class="lead">Una experiencia interactiva para pasar de detectar una necesidad a plantear y desarrollar una solución tecnológica.</p><a class="button" href="#bloques">Empezar la unidad</a></div><div class="hero-card"><div class="bot">🤖</div><p>Misión 01</p><small>Primero observa. Después piensa. Luego crea.</small></div></section>
-<section id="bloques" class="section"><div class="section-heading"><p class="eyebrow">RECORRIDO</p><h2>Seis bloques para avanzar.</h2></div><div class="course-grid">
-<a class="course-card" href="#bloque-1"><span>01</span><h3>Necesidades y problemas</h3><p>Detectar qué necesita mejorar nuestro entorno.</p><strong>Explorar →</strong></a>
-<div class="course-card"><span>02</span><h3>Proceso tecnológico</h3><p>Próximamente.</p></div><div class="course-card"><span>03</span><h3>Investigación</h3><p>Próximamente.</p></div><div class="course-card"><span>04</span><h3>Creatividad</h3><p>Próximamente.</p></div><div class="course-card"><span>05</span><h3>Trabajo en equipo</h3><p>Próximamente.</p></div><div class="course-card"><span>06</span><h3>Emprendimiento ecosocial</h3><p>Próximamente.</p></div>
-</div></section>
-<section id="bloque-1" class="section intro"><p class="eyebrow">01 · PRIMER PASO</p><h2>¿Qué problema merece nuestra atención?</h2><p>En la siguiente fase convertiremos este bloque en una secuencia interactiva: situación inicial, decisión, descubrimiento, comprobación y aplicación.</p><a class="button" href="#">Próximamente: comenzar 1.1 →</a></section></main>
-<footer><span>ProfeAlbertoD</span> · Tecnología con acento andaluz</footer></body></html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Unidad 1 · Gestión de proyectos · ProfeAlbertoD</title>
+<link rel="stylesheet" href="../../../../css/style.css">
+<style>
+.lesson{max-width:980px;margin:auto;padding:50px 20px 100px}.progress{height:7px;background:#e8ebee;border-radius:20px;overflow:hidden;margin-bottom:45px}.progress i{display:block;width:16.6%;height:100%;background:var(--accent);transition:.3s}.screen{display:none}.screen.active{display:block}.tag{display:inline-block;background:#fff0eb;color:var(--accent);padding:7px 11px;border-radius:99px;font-weight:800;font-size:.75rem}.screen h2{font-size:clamp(2.2rem,5vw,4.5rem);line-height:.98;letter-spacing:-.06em;margin:18px 0}.screen p{font-size:1.1rem;color:var(--muted);max-width:760px}.situation{background:#fff;border:1px solid var(--line);border-radius:22px;padding:30px;margin:28px 0}.choices{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:25px 0}.choice{border:2px solid var(--line);background:#fff;border-radius:15px;padding:20px;text-align:left;cursor:pointer;font:inherit;transition:.15s}.choice:hover{border-color:var(--accent);transform:translateY(-2px)}.choice.correct{border-color:#2d9d61;background:#effaf4}.choice.wrong{border-color:#d65b5b;background:#fff2f2}.feedback{min-height:28px;font-weight:700}.reveal{background:var(--ink);color:#fff;border-radius:22px;padding:30px;margin-top:25px}.reveal p{color:#d8dee4}.idea{border-left:5px solid var(--accent);padding:15px 20px;background:#fff;margin:25px 0}.controls{display:flex;justify-content:space-between;gap:12px;margin-top:40px}.controls button{border:0;border-radius:10px;padding:13px 19px;font:inherit;font-weight:800;cursor:pointer}.next{background:var(--ink);color:#fff}.back{background:#e9ecef}.task{background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px;margin-top:25px}.task textarea{width:100%;min-height:120px;border:1px solid var(--line);border-radius:12px;padding:15px;font:inherit;resize:vertical}.saved{display:none;margin-top:12px;color:#23824d;font-weight:800}@media(max-width:700px){.choices{grid-template-columns:1fr}.lesson{padding-top:30px}}
+</style>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="../../../../">Profe<span>AlbertoD</span></a><nav><a href="../../">4.º ESO</a><a href="#inicio">Unidad 1</a></nav></header>
+
+<main class="lesson" id="inicio">
+<div class="progress"><i id="bar"></i></div>
+
+<section class="screen active">
+<span class="tag">01 · ACTIVAMOS</span>
+<h2>¿Qué problema merece nuestra atención?</h2>
+<p>Imagina que llegas cada mañana al centro y detectas algo que podría funcionar mejor. Antes de pensar en construir nada, hay una pregunta importante: <strong>¿qué necesidad estamos intentando resolver?</strong></p>
+<div class="situation"><strong>Situación:</strong> en el instituto hay un problema cotidiano que afecta al alumnado. Puede estar relacionado con los espacios, la movilidad, la organización, el consumo de recursos o cualquier otra situación de nuestro entorno.</div>
+<p>¿Cuál debería ser el primer paso?</p>
+<div class="choices" data-q="0">
+<button class="choice" onclick="answer(this,false,'Construir sin conocer bien el problema puede llevarnos a una solución que no responde a la necesidad.')">Empezar a construir una solución.</button>
+<button class="choice" onclick="answer(this,true,'Exacto. Primero necesitamos identificar y comprender la necesidad o el problema.')">Identificar y comprender la necesidad.</button>
+<button class="choice" onclick="answer(this,false,'Una idea puede aparecer pronto, pero necesitamos conocer primero qué necesidad queremos resolver.')">Elegir una tecnología concreta.</button>
+</div><div class="feedback"></div>
+</section>
+
+<section class="screen">
+<span class="tag">02 · DESCUBRIMOS</span>
+<h2>Necesidad no es lo mismo que solución.</h2>
+<p>Una <strong>necesidad</strong> es aquello que una persona o un grupo necesita para mejorar una situación. Un <strong>problema tecnológico</strong> aparece cuando buscamos una forma de responder a esa necesidad mediante una solución tecnológica.</p>
+<div class="reveal"><strong>Ejemplo</strong><p>Necesidad: desplazarnos de forma segura por el centro.</p><p>Problema: ¿cómo podemos mejorar la movilidad y la seguridad en determinados espacios?</p><p>Solución: todavía no la sabemos. Primero investigamos.</p></div>
+<div class="idea"><strong>Quédate con esta idea:</strong> detectar una necesidad no significa tener ya la solución.</div>
+</section>
+
+<section class="screen">
+<span class="tag">03 · COMPROBAMOS</span>
+<h2>¿Necesidad o solución?</h2>
+<p>Clasifica cada propuesta. Piensa en <strong>qué se necesita</strong> frente a <strong>qué podríamos construir o utilizar</strong>.</p>
+<div class="choices">
+<button class="choice" onclick="answer(this,true,'Correcto: mejorar la iluminación es una necesidad o situación a mejorar.')">Mejorar la iluminación de un pasillo.</button>
+<button class="choice" onclick="answer(this,false,'Eso ya es una posible solución tecnológica.')">Instalar sensores de movimiento.</button>
+<button class="choice" onclick="answer(this,false,'Eso ya es una posible solución tecnológica.')">Crear una aplicación.</button>
+</div><div class="feedback"></div>
+</section>
+
+<section class="screen">
+<span class="tag">04 · APLICAMOS</span>
+<h2>Ahora tú.</h2>
+<p>Observa tu centro, tu barrio o tu entorno cotidiano. Busca una situación que podría mejorar y formula la <strong>necesidad</strong> sin proponer todavía una solución.</p>
+<div class="task"><label for="need"><strong>Mi necesidad o problema:</strong></label><textarea id="need" placeholder="Ejemplo: En los cambios de clase se acumula mucha gente en..."></textarea><button class="button" style="margin-top:14px" onclick="saveTask()">Guardar mi idea</button><div class="saved" id="saved">✓ Idea guardada en este dispositivo.</div></div>
+</section>
+
+<section class="screen">
+<span class="tag">05 · COMPARTIMOS</span>
+<h2>Una buena pregunta abre un proyecto.</h2>
+<p>Comparte tu necesidad con otra persona. Después comprobad si está formulada de forma suficientemente clara para que otra persona entienda <strong>qué situación queremos mejorar</strong>.</p>
+<div class="idea"><strong>Antes de continuar, comprueba:</strong><br>□ He descrito una situación real.<br>□ He explicado qué necesita mejorar.<br>□ No he elegido todavía una solución concreta.</div>
+</section>
+
+<section class="screen">
+<span class="tag">06 · SIGUIENTE</span>
+<h2>Ya tenemos el punto de partida.</h2>
+<p>En el siguiente apartado veremos cómo transformar una necesidad detectada en un <strong>proceso de resolución de problemas tecnológicos</strong>.</p>
+<div class="reveal"><strong>Recuerda</strong><p>Necesidad → problema → investigación → diseño → solución.</p></div>
+</section>
+
+<div class="controls"><button class="back" onclick="go(-1)">← Atrás</button><button class="next" onclick="go(1)" id="next">Continuar →</button></div>
+</main>
+<footer><span>ProfeAlbertoD</span> · Unidad 1 · Tecnología 4.º ESO</footer>
+<script>
+let current=0;const screens=[...document.querySelectorAll('.screen')],bar=document.getElementById('bar');
+function render(){screens.forEach((s,i)=>s.classList.toggle('active',i===current));bar.style.width=((current+1)/screens.length*100)+'%';document.getElementById('next').textContent=current===screens.length-1?'Finalizar →':'Continuar →';scrollTo({top:0,behavior:'smooth'})}
+function go(n){current=Math.max(0,Math.min(screens.length-1,current+n));render()}
+function answer(btn,ok,msg){const box=btn.parentElement;box.querySelectorAll('.choice').forEach(b=>b.classList.remove('correct','wrong'));btn.classList.add(ok?'correct':'wrong');box.nextElementSibling.textContent=msg}
+function saveTask(){const v=document.getElementById('need').value.trim();if(!v)return;localStorage.setItem('profealbertod-u1-1-1',v);document.getElementById('saved').style.display='block'}
+</script>
+</body></html>
