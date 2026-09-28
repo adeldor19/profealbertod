@@ -1,61 +1,115 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Recursos interactivos de ProfeAlbertoD">
-  <title>ProfeAlbertoD · Aula digital</title>
-  <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Aula digital interactiva de Tecnología · ProfeAlbertoD">
+<title>ProfeAlbertoD · Aula digital</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+.home-hero{padding:clamp(55px,8vw,100px) clamp(20px,8vw,120px);background:#fff;display:grid;grid-template-columns:1.15fr .85fr;gap:55px;align-items:stretch}
+.home-copy{display:flex;flex-direction:column;justify-content:center}
+.home-kicker{font-size:.75rem;font-weight:900;letter-spacing:.18em;color:var(--accent);margin:0 0 15px}
+.home-hero h1{font-size:clamp(3.5rem,7.5vw,7.2rem);line-height:.88;letter-spacing:-.075em;margin:0;max-width:850px}
+.home-hero h1 span{color:var(--accent)}
+.home-lead{max-width:680px;color:var(--muted);font-size:1.2rem;margin:28px 0 30px}
+.home-actions{display:flex;gap:12px;flex-wrap:wrap}
+.home-panel{background:var(--ink);color:#fff;border-radius:28px;padding:35px;min-height:390px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+.home-panel:after{content:"";position:absolute;width:230px;height:230px;border:35px solid var(--accent);border-radius:50%;right:-95px;top:-95px;opacity:.95}
+.panel-top{display:flex;justify-content:space-between;align-items:flex-start;position:relative;z-index:1}
+.panel-label{font-size:.72rem;font-weight:900;letter-spacing:.16em;color:#cbd2d9}
+.panel-number{font-size:5rem;font-weight:900;line-height:.8;color:var(--accent)}
+.panel-bottom{position:relative;z-index:1}
+.panel-bottom strong{display:block;font-size:1.55rem;line-height:1.05;margin-bottom:8px}
+.panel-bottom p{margin:0;color:#cbd2d9;max-width:310px}
+.home-section{padding:85px clamp(20px,8vw,120px)}
+.home-section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:30px}
+.home-section-head h2{font-size:clamp(2.3rem,4vw,4rem);letter-spacing:-.06em;margin:0}
+.home-section-head p{color:var(--muted);max-width:420px;margin:0}
+.course-showcase{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.course-main{border-radius:24px;padding:32px;min-height:300px;display:flex;flex-direction:column;transition:.2s}
+.course-main:hover{transform:translateY(-4px)}
+.course-main.navy{background:var(--ink);color:#fff}
+.course-main.orange{background:var(--accent);color:#fff}
+.course-main .course-number{font-size:.8rem;font-weight:900;letter-spacing:.14em;opacity:.8}
+.course-main h3{font-size:clamp(2rem,3vw,3rem);line-height:.95;letter-spacing:-.05em;margin:45px 0 10px}
+.course-main p{margin:0;max-width:520px;color:#dbe2e8}
+.course-main.orange p{color:#fff}
+.course-main strong{margin-top:auto;padding-top:35px}
+.coming-soon{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:18px}
+.soon{background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px 25px;display:flex;justify-content:space-between;align-items:center;color:var(--muted)}
+.soon strong{color:var(--ink)}
+.method{background:var(--ink);color:#fff;border-radius:28px;padding:42px;display:grid;grid-template-columns:.8fr 1.2fr;gap:50px;align-items:center}
+.method .eyebrow{color:var(--accent)}
+.method h2{font-size:clamp(2.2rem,4vw,4rem);line-height:.95;letter-spacing:-.06em;margin:0}
+.method-copy{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.method-item{border:1px solid #ffffff1f;border-radius:16px;padding:20px}
+.method-item span{display:block;color:var(--accent);font-weight:900;font-size:.75rem;margin-bottom:25px}
+.method-item strong{display:block;font-size:1.1rem}
+.method-item p{color:#cbd2d9;font-size:.9rem;margin-bottom:0}
+.home-footer-note{text-align:center;color:var(--muted);font-size:.9rem;padding:0 20px 15px}
+@media(max-width:850px){.home-hero{grid-template-columns:1fr}.course-showcase,.method{grid-template-columns:1fr}.method-copy{grid-template-columns:1fr 1fr}.coming-soon{grid-template-columns:1fr}}
+@media(max-width:520px){.home-hero h1{font-size:3.5rem}.method-copy{grid-template-columns:1fr}.home-panel{min-height:300px}}
+</style>
 </head>
 <body>
-  <header class="topbar">
-    <a class="brand" href="/profealbertod/">Profe<span>AlbertoD</span></a>
-    <nav aria-label="Navegación principal">
-      <a href="#cursos">Cursos</a>
-      <a href="#sobre">El proyecto</a>
-    </nav>
-  </header>
+<header class="topbar">
+<a class="brand" href="/profealbertod/">Profe<span>AlbertoD</span></a>
+<nav aria-label="Navegación principal"><a href="#cursos">Cursos</a><a href="#metodo">Cómo aprendemos</a></nav>
+</header>
 
-  <main>
-    <section class="hero">
-      <div class="hero-copy">
-        <p class="eyebrow">AULA DIGITAL</p>
-        <h1>Aprender tecnología<br><span>haciendo.</span></h1>
-        <p class="lead">Recursos interactivos para aprender, experimentar, crear y resolver problemas.</p>
-        <a class="button" href="#cursos">Entrar al aula</a>
-      </div>
-      <div class="hero-card">
-        <div class="bot">🤖</div>
-        <p>Bienvenido al aula.</p>
-        <small>Explora tu curso y empieza la misión.</small>
-      </div>
-    </section>
+<main>
+<section class="home-hero">
+<div class="home-copy">
+<p class="home-kicker">AULA DIGITAL · CURSO 26/27</p>
+<h1>Aprender tecnología<br><span>haciendo.</span></h1>
+<p class="home-lead">Un aula para comprender problemas, tomar decisiones, experimentar y crear soluciones. Aquí no vienes solo a leer: vienes a hacer.</p>
+<div class="home-actions"><a class="button" href="#cursos">Entrar al aula →</a></div>
+</div>
+<div class="home-panel">
+<div class="panel-top"><span class="panel-label">PROFEALBERTOD</span><span class="panel-number">26/27</span></div>
+<div class="panel-bottom"><strong>Observa.<br>Piensa.<br>Crea.</strong><p>Una clase digital interactiva para aprender Tecnología paso a paso.</p></div>
+</div>
+</section>
 
-    <section id="cursos" class="section">
-      <div class="section-heading">
-        <p class="eyebrow">ELIGE TU CURSO</p>
-        <h2>¿Qué vamos a aprender?</h2>
-      </div>
-      <div class="course-grid">
-        <a class="course-card" href="4eso/tecnologia/">
-          <span>04</span>
-          <h3>4.º ESO</h3>
-          <p>Tecnología</p>
-          <strong>Entrar →</strong>
-        </a>
-        <div class="course-card muted"><span>01–03</span><h3>ESO</h3><p>Próximamente</p></div>
-        <a class="course-card" href="1bach/tecnologia-ingenieria/"><span>01</span><h3>1.º Bach.</h3><p>Tecnología e Ingeniería</p><strong>Entrar →</strong></a>
-        <div class="course-card muted"><span>02</span><h3>2.º Bach.</h3><p>Próximamente</p></div>
-      </div>
-    </section>
+<section id="cursos" class="home-section">
+<div class="home-section-head">
+<div><p class="eyebrow">ELIGE TU CURSO</p><h2>Tu aula empieza aquí.</h2></div>
+<p>Accede directamente a las unidades y trabaja los contenidos a través de actividades, decisiones y retos.</p>
+</div>
+<div class="course-showcase">
+<a class="course-main navy" href="4eso/tecnologia/">
+<span class="course-number">04 · ESO</span>
+<h3>Tecnología</h3>
+<p>Proyectos, diseño, investigación, creatividad y soluciones tecnológicas.</p>
+<strong>Entrar en 4.º ESO →</strong>
+</a>
+<a class="course-main orange" href="1bach/tecnologia-ingenieria/">
+<span class="course-number">01 · BACHILLERATO</span>
+<h3>Tecnología e Ingeniería</h3>
+<p>Gestión de proyectos, Design Thinking, creatividad, prototipado y comunicación.</p>
+<strong>Entrar en 1.º Bach. →</strong>
+</a>
+</div>
+<div class="coming-soon">
+<div class="soon"><span>01–03 ESO · Próximamente</span><strong>En construcción</strong></div>
+<div class="soon"><span>02 Bach. · Próximamente</span><strong>En construcción</strong></div>
+</div>
+</section>
 
-    <section id="sobre" class="section intro">
-      <p class="eyebrow">UNA IDEA</p>
-      <h2>Esto no es un PDF en una pantalla.</h2>
-      <p>Cada recurso está pensado para que el alumnado tenga que observar, decidir, probar, equivocarse, crear y explicar.</p>
-    </section>
-  </main>
+<section id="metodo" class="home-section">
+<div class="method">
+<div><p class="eyebrow">LA IDEA</p><h2>Esto no es un PDF en una pantalla.</h2></div>
+<div class="method-copy">
+<div class="method-item"><span>01</span><strong>Observa</strong><p>Comprende necesidades y problemas reales.</p></div>
+<div class="method-item"><span>02</span><strong>Decide</strong><p>Investiga, compara alternativas y justifica.</p></div>
+<div class="method-item"><span>03</span><strong>Crea</strong><p>Prueba, equivócate, mejora y comunica.</p></div>
+</div>
+</div>
+</section>
+<p class="home-footer-note">Tecnología con acento andaluz · IES Andrés Benítez</p>
+</main>
 
-  <footer><span>ProfeAlbertoD</span> · Tecnología con acento andaluz</footer>
+<footer><span>ProfeAlbertoD</span> · Aula digital de Tecnología</footer>
 </body>
 </html>
