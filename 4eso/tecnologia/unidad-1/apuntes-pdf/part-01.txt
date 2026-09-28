@@ -1,0 +1,117 @@
+%PDF-1.4
+%ASCII
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [4 0 R 6 0 R 8 0 R 10 0 R 12 0 R 14 0 R 16 0 R 18 0 R 20 0 R 22 0 R 24 0 R] /Count 11 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 5 0 R >>
+endobj
+5 0 obj
+<< /Length 4788 >>
+stream
+BT
+/F1 10 Tf
+1 0 0 1 45 790 Tm (TEMA 1) Tj
+1 0 0 1 45 777 Tm (Gesti\363n de Proyectos y ) Tj
+1 0 0 1 45 764 Tm (Emprendimiento Ecosocial) Tj
+1 0 0 1 45 751 Tm (De una necesidad a una soluci\363n que mejora nuestro entorno.) Tj
+1 0 0 1 45 738 Tm (Tecnolog\355a) Tj
+1 0 0 1 45 725 Tm (4.\272 ESO) Tj
+1 0 0 1 45 712 Tm (Curso 2026/2027) Tj
+1 0 0 1 45 699 Tm (IES Andr\351s Ben\355tez) Tj
+1 0 0 1 45 686 Tm (Jerez de la Frontera) Tj
+1 0 0 1 45 673 Tm (Tecnolog\355a - 4.\272 ESO 2026/2027) Tj
+1 0 0 1 45 660 Tm (Gesti\363n de Proyectos y Emprendimiento Ecosocial) Tj
+1 0 0 1 45 647 Tm (\315ndice) Tj
+1 0 0 1 45 634 Tm (1. Proyectos tecnol\363gicos y Necesidades de la Sociedad . . . . . . . . . . . . . . . . . . . . . . 3) Tj
+1 0 0 1 45 621 Tm (1.1. Necesidades y problemas tecnol\363gicos . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .) Tj
+1 0 0 1 45 608 Tm (. . . 3) Tj
+1 0 0 1 45 595 Tm (1.2. Tecnolog\355a y sociedad . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .) Tj
+1 0 0 1 45 582 Tm (. . . . . . . . . . . . . . . . . . . . . . . . 3) Tj
+1 0 0 1 45 569 Tm (1.3. Problemas del entorno cercano . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .) Tj
+1 0 0 1 45 556 Tm (. . . . . . . . 4) Tj
+1 0 0 1 45 543 Tm (1.4. Necesidades del centro, localidad y Andaluc\355a . . . . . . . . . . . . . . . . . . . . . . . . .) Tj
+1 0 0 1 45 530 Tm (5) Tj
+1 0 0 1 45 517 Tm (1.5. Valor social de la tecnolog\355a . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .) Tj
+1 0 0 1 45 504 Tm (. . . . . . . . . . . 5) Tj
+1 0 0 1 45 491 Tm (2. El proceso de resoluci\363n de problemas tecnol\363gicos . . . . . . . . . . . . . . . . . . . . . . 6) Tj
+1 0 0 1 45 478 Tm (2.1. Fases del proyecto tecnol\363gico . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .) Tj
+1 0 0 1 45 465 Tm (. . . . . . . . . 6) Tj
+1 0 0 1 45 452 Tm (2.2. Investigaci\363n y an\341lisis . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .) Tj
+1 0 0 1 45 439 Tm (. . . . . . . . . . . . . . . 6) Tj
+1 0 0 1 45 426 Tm (2.3. Dise\361o y planificaci\363n . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .) Tj
+1 0 0 1 45 413 Tm (. . . . . . . . . . . . . . . . 7) Tj
+1 0 0 1 45 400 Tm (2.4. Desarrollo y evaluaci\363n . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .) Tj
+1 0 0 1 45 387 Tm (. . . . . . . . . . . . . . . . 7) Tj
+1 0 0 1 45 374 Tm (2.5. Procesos iterativos . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .) Tj
+1 0 0 1 45 361 Tm (. . . . . . . . . . . . . . . . 8) Tj
+1 0 0 1 45 348 Tm (2.6. Mejora continua . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .) Tj
+1 0 0 1 45 335 Tm (. . . . . . . . . . . . . . . . . 8) Tj
+1 0 0 1 45 322 Tm (3. Investigaci\363n e identificaci\363n de necesidades . . . . . . . . . . . . . . . . . . . . . . . . . .) Tj
+1 0 0 1 45 309 Tm (. . . 9) Tj
+1 0 0 1 45 296 Tm (3.1. Observaci\363n . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .) Tj
+1 0 0 1 45 283 Tm (. . . . . . . . . . . . . . . . . . . 9) Tj
+1 0 0 1 45 270 Tm (3.2. Encuestas . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .) Tj
+1 0 0 1 45 257 Tm (. . . . . . . . . . . . . . . . . . . . . 9) Tj
+1 0 0 1 45 244 Tm (3.3. Entrevistas . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .) Tj
+1 0 0 1 45 231 Tm (. . . . . . . . . . . . . . . . . . . 10) Tj
+1 0 0 1 45 218 Tm (3.4. B\372squeda de informaci\363n . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .) Tj
+1 0 0 1 45 205 Tm (. . . . . . . . . 10) Tj
+1 0 0 1 45 192 Tm (3.5. An\341lisis de datos . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .) Tj
+1 0 0 1 45 179 Tm (. . . . . . . . . . . . . . . . . 11) Tj
+1 0 0 1 45 166 Tm (3.6. Formulaci\363n del problema . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .) Tj
+1 0 0 1 45 153 Tm (. . . . . . . . . . 11) Tj
+1 0 0 1 45 140 Tm (4. Creatividad . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .) Tj
+1 0 0 1 45 127 Tm (. . . . . . . . . . . . . . . . . . . . . 12) Tj
+1 0 0 1 45 114 Tm (4.1. Creatividad tecnol\363gica . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .) Tj
+1 0 0 1 45 101 Tm (. . . . . . . . . . . . . . . . . 12) Tj
+1 0 0 1 45 88 Tm (4.2. Generaci\363n de ideas . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .) Tj
+1 0 0 1 45 75 Tm (. . . . . . . . . . . . . . . . . 12) Tj
+1 0 0 1 45 62 Tm (4.3. Brainstorming . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .) Tj
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 7 0 R >>
+endobj
+7 0 obj
+<< /Length 4863 >>
+stream
+BT
+/F1 10 Tf
+1 0 0 1 45 790 Tm (. . . . . . . . . . . . . . . . . 13) Tj
+1 0 0 1 45 777 Tm (4.4. SCAMPER . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .) Tj
+1 0 0 1 45 764 Tm (. . . . . . . . . . . . . . . . . . . 13) Tj
+1 0 0 1 45 751 Tm (4.5. Mapas mentales . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .) Tj
+1 0 0 1 45 738 Tm (. . . . . . . . . . . . . . . . . 13) Tj
+1 0 0 1 45 725 Tm (4.6. Selecci\363n de soluciones . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .) Tj
+1 0 0 1 45 712 Tm (. . . . . . . . . . . . 14) Tj
+1 0 0 1 45 699 Tm (5. Gesti\363n colaborativa de proyectos . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .) Tj
+1 0 0 1 45 686 Tm (. . . . . . . 15) Tj
+1 0 0 1 45 673 Tm (5.1. Trabajo en equipo . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .) Tj
+1 0 0 1 45 660 Tm (. . . . . . . . . . . . . . . . 15) Tj
+1 0 0 1 45 647 Tm (5.2. Roles y responsabilidades . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .) Tj
+1 0 0 1 45 634 Tm (. . . . . . . . . . . . . . . . 15) Tj
+1 0 0 1 45 621 Tm (5.3. Planificaci\363n de tareas . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .) Tj
+1 0 0 1 45 608 Tm (. . . . . . . . . . . . . . . 15) Tj
+1 0 0 1 45 595 Tm (5.4. Herramientas digitales colaborativas . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .) Tj
+1 0 0 1 45 582 Tm (. . . . . 16) Tj
+1 0 0 1 45 569 Tm (5.5. Gesti\363n del tiempo . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .) Tj
+1 0 0 1 45 556 Tm (. . . . . . . . . . . . . . . . . 16) Tj
+1 0 0 1 45 543 Tm (5.6. Resoluci\363n de conflictos . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .) Tj
+1 0 0 1 45 530 Tm (. . . . . . . . . . . . . . . . 16) Tj
+1 0 0 1 45 517 Tm (6. Emprendimiento ecosocial . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .) Tj
+1 0 0 1 45 504 Tm (. . . . . . . . . . . 17) Tj
+1 0 0 1 45 491 Tm (6.1. Emprendimiento e innovaci\363n . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .) Tj
+1 0 0 1 45 478 Tm (. . . . . . . . . 17) Tj
+1 0 0 1 45 465 Tm (6.2. Emprendimiento social y ecosocial . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .) Tj
+1 0 0 1 45 452 Tm (. . . . . . . 17) Tj
+1 0 0 1 45 439 Tm (Tecnolog\355a - 4.\272 ESO 2026/2027) Tj
+1 0 0 1 45 426 Tm (6.3. Creaci\363n de valor . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .) Tj
+1 0 0 1 45 4
