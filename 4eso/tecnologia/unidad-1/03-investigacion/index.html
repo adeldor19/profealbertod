@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>1.3 · Investigación e identificación de necesidades · ProfeAlbertoD</title>
+<link rel="stylesheet" href="/profealbertod/css/style.css">
+<style>
+.lesson{max-width:980px;margin:auto;padding:42px 20px 100px}
+.lesson-head{margin:20px 0 34px}.kicker{display:inline-flex;font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.lesson-head h1{font-size:clamp(2.6rem,6vw,5.2rem);line-height:.92;letter-spacing:-.065em;margin:14px 0 18px;max-width:850px}
+.lesson-head p,.screen p{font-size:1.08rem;color:var(--muted);max-width:780px}
+.progress-wrap{display:flex;align-items:center;gap:14px;margin:30px 0 44px}.progress{height:7px;background:#e8ebee;border-radius:20px;overflow:hidden;flex:1}.progress i{display:block;width:14.2%;height:100%;background:var(--accent);transition:.3s}.step{font-size:.78rem;font-weight:800;color:var(--muted);white-space:nowrap}
+.screen{display:none}.screen.active{display:block}.tag{display:inline-block;background:#fff0eb;color:var(--accent);padding:7px 11px;border-radius:99px;font-weight:800;font-size:.75rem}
+.screen h2{font-size:clamp(2rem,4.5vw,4rem);line-height:.98;letter-spacing:-.055em;margin:18px 0}
+.panel,.data,.task,.source{background:#fff;border:1px solid var(--line);border-radius:22px;padding:28px;margin:28px 0}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:24px 0}.card{border:1px solid var(--line);border-radius:18px;padding:20px}.card b{display:block;margin-bottom:8px}.card span{color:var(--muted)}
+.choices{display:grid;gap:12px;margin:22px 0}.choice{border:2px solid var(--line);background:#fff;border-radius:15px;padding:18px;text-align:left;cursor:pointer;font:inherit;transition:.15s}.choice:hover{border-color:var(--accent)}.choice.correct{border-color:#2d9d61;background:#effaf4}.choice.wrong{border-color:#d65b5b;background:#fff2f2}.feedback{min-height:26px;font-weight:700;margin-top:10px}
+.data table{width:100%;border-collapse:collapse;margin:18px 0}.data th,.data td{padding:13px;border-bottom:1px solid var(--line);text-align:left}.data th{font-size:.82rem;text-transform:uppercase;letter-spacing:.05em}.data .bar{height:12px;background:#eef1f3;border-radius:20px;overflow:hidden}.data .bar i{display:block;height:100%;background:var(--accent)}
+textarea{width:100%;min-height:115px;border:1px solid var(--line);border-radius:12px;padding:15px;font:inherit;resize:vertical;box-sizing:border-box}
+button.save,.next,.finish{border:0;border-radius:10px;padding:13px 19px;font:inherit;font-weight:800;cursor:pointer;background:var(--ink);color:#fff;margin-top:14px}.saved{display:none;color:#23824d;font-weight:800;margin-top:10px}
+.source-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.source{margin:0;cursor:pointer}.source.active{border-color:var(--accent);box-shadow:0 0 0 2px #ff6b3520}.source small{display:block;color:var(--muted);margin-top:7px}
+.result{background:var(--ink);color:#fff;border-radius:22px;padding:28px;margin-top:24px}.result p{color:#d8dee4}.idea{border-left:5px solid var(--accent);padding:15px 20px;background:#fff;margin:25px 0}
+.controls{display:flex;justify-content:space-between;gap:12px;margin-top:42px}.controls button{border:0;border-radius:10px;padding:13px 19px;font:inherit;font-weight:800;cursor:pointer}.back{background:#e9ecef}
+@media(max-width:700px){.cards,.source-list{grid-template-columns:1fr}.data{overflow-x:auto}.data table{min-width:600px}}
+</style>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="/profealbertod/">Profe<span>AlbertoD</span></a><nav><a href="../">Unidad 1</a><a href="../../">4.º ESO</a></nav></header>
+<main class="lesson">
+<div class="lesson-head"><span class="kicker">Unidad 1 · 1.3</span><h1>Investigación e identificación de necesidades.</h1><p>Antes de decidir una solución, necesitamos reunir información, contrastarla y utilizar los datos para comprender el problema.</p></div>
+<div class="progress-wrap"><div class="progress"><i id="bar"></i></div><span class="step" id="step">1 / 7</span></div>
+
+<section class="screen active">
+<span class="tag">01 · OBSERVAMOS</span><h2>Investigar empieza por mirar.</h2>
+<p>Observar no significa simplemente mirar. Significa prestar atención para detectar situaciones que podrían mejorarse.</p>
+<div class="cards">
+<div class="card"><b>Problemas que se repiten</b><span>¿Ocurre muchas veces?</span></div>
+<div class="card"><b>Tareas difíciles</b><span>¿Hay algo incómodo o complicado?</span></div>
+<div class="card"><b>Recursos desperdiciados</b><span>¿Se pierde agua, energía o materiales?</span></div>
+<div class="card"><b>Necesidades de las personas</b><span>¿Quién tiene una dificultad?</span></div>
+</div>
+<div class="panel"><strong>Situación:</strong> después del recreo quedan muchos residuos en el patio.<p>¿Qué información sería más útil recoger antes de diseñar una solución?</p>
+<div class="choices">
+<button class="choice" onclick="answer(this,false,'Eso podría ser una solución, pero todavía no conocemos suficientemente el problema.')">Comprar papeleras nuevas.</button>
+<button class="choice" onclick="answer(this,true,'Exacto. Necesitamos conocer qué ocurre, dónde, cuándo y a quién afecta.')">Observar dónde se acumulan los residuos y cuándo ocurre.</button>
+<button class="choice" onclick="answer(this,false,'Es una decisión que corresponde después de investigar.')">Elegir el tipo de papelera.</button>
+</div><div class="feedback"></div></div>
+</section>
+
+<section class="screen">
+<span class="tag">02 · ELEGIMOS LA HERRAMIENTA</span><h2>¿Cómo conseguirías la información?</h2>
+<p>Cada herramienta sirve para obtener un tipo de información diferente.</p>
+<div class="cards">
+<div class="card"><b>Observación</b><span>Permite comprobar directamente qué sucede.</span></div>
+<div class="card"><b>Encuesta</b><span>Permite conocer opiniones, hábitos o necesidades de muchas personas.</span></div>
+<div class="card"><b>Entrevista</b><span>Aporta información más detallada de una persona.</span></div>
+<div class="card"><b>Búsqueda de información</b><span>Permite localizar soluciones, estudios o experiencias anteriores.</span></div>
+</div>
+<div class="panel"><strong>Situación:</strong> quieres saber por qué el alumnado utiliza poco las fuentes de agua del centro.</div>
+<div class="choices">
+<button class="choice" onclick="answer(this,false,'La observación puede ayudarte, pero no te permitirá conocer por sí sola las razones de muchas personas.')">Observar solamente las fuentes.</button>
+<button class="choice" onclick="answer(this,true,'Correcto. Una encuesta permite recoger hábitos y opiniones de un grupo y compararlos.')">Hacer una encuesta al alumnado.</button>
+<button class="choice" onclick="answer(this,false,'Una entrevista puede aportar detalle, pero una encuesta permite conocer el comportamiento de un grupo más amplio.')">Entrevistar a una única persona.</button>
+</div><div class="feedback"></div>
+</section>
+
+<section class="screen">
+<span class="tag">03 · DISEÑAMOS PREGUNTAS</span><h2>Una encuesta no vale cualquier pregunta.</h2>
+<p>Las preguntas deben ser claras, concretas y estar relacionadas con el problema. Algunas son fáciles de comparar y otras pueden orientar demasiado la respuesta.</p>
+<div class="panel">
+<p><strong>Problema:</strong> queremos investigar por qué el alumnado utiliza poco las fuentes de agua.</p>
+<div class="choices">
+<button class="choice" onclick="answer(this,true,'Útil: pregunta directamente por la frecuencia de uso.')">¿Con qué frecuencia utilizas las fuentes?</button>
+<button class="choice" onclick="answer(this,false,'Es demasiado general para investigar el problema.')">¿Te gustan las fuentes del instituto?</button>
+<button class="choice" onclick="answer(this,true,'Útil: permite conocer una posible causa del problema.')">¿Por qué no utilizas las fuentes?</button>
+<button class="choice" onclick="answer(this,false,'La pregunta ya sugiere que las fuentes son malas y puede condicionar la respuesta.')">¿No crees que deberíamos tener mejores fuentes?</button>
+</div><div class="feedback"></div>
+</div>
+<div class="idea"><strong>Recuerda:</strong> una encuesta sirve para obtener información; después tendremos que analizar las respuestas.</div>
+</section>
+
+<section class="screen">
+<span class="tag">04 · BUSCAMOS Y CONTRASTAMOS</span><h2>Encontrar información no significa que sea fiable.</h2>
+<p>Antes de utilizar una fuente debemos comprobar quién la publica, cuándo se publicó o actualizó, qué información aporta y si coincide con otras fuentes fiables.</p>
+<div class="source-list">
+<div class="source" onclick="pickSource(this,false)"><b>Fuente A</b><small>Entrada anónima en una red social. No indica autor ni fecha.</small></div>
+<div class="source" onclick="pickSource(this,true)"><b>Fuente B</b><small>Informe de una institución. Indica autor, fecha y metodología.</small></div>
+<div class="source" onclick="pickSource(this,false)"><b>Fuente C</b><small>Vídeo viral sin referencias ni explicación del origen de los datos.</small></div>
+<div class="source" onclick="pickSource(this,false)"><b>Fuente D</b><small>Publicación antigua que presenta datos sin indicar de dónde proceden.</small></div>
+</div>
+<div id="sourceFeedback" class="feedback"></div>
+</section>
+
+<section class="screen">
+<span class="tag">05 · ANALIZAMOS DATOS</span><h2>Los datos tienen algo que decirnos.</h2>
+<p>Se ha preguntado a 40 estudiantes qué problema del patio debería solucionarse primero.</p>
+<div class="data"><table><tr><th>Problema</th><th>Respuestas</th><th>Representación</th></tr>
+<tr><td>Falta de sombra</td><td>18</td><td><div class="bar"><i style="width:100%"></i></div></td></tr>
+<tr><td>Suciedad</td><td>10</td><td><div class="bar"><i style="width:56%"></i></div></td></tr>
+<tr><td>Ruido</td><td>7</td><td><div class="bar"><i style="width:39%"></i></div></td></tr>
+<tr><td>Falta de bancos</td><td>5</td><td><div class="bar"><i style="width:28%"></i></div></td></tr></table>
+<p><strong>¿Qué porcentaje representa la opción más votada?</strong></p>
+<div class="choices">
+<button class="choice" onclick="answer(this,false,'10 de 40 son el 25 %. Pero la opción más votada tiene 18 respuestas.')">25 %</button>
+<button class="choice" onclick="answer(this,true,'Correcto: 18 de 40 = 45 %. Los datos muestran que la falta de sombra fue la opción más elegida.')">45 %</button>
+<button class="choice" onclick="answer(this,false,'El porcentaje debe calcularse respecto al total de 40 respuestas.')">55 %</button>
+</div><div class="feedback"></div></div>
+</section>
+
+<section class="screen">
+<span class="tag">06 · FORMULAMOS</span><h2>Convierte los datos en un problema concreto.</h2>
+<p>Una buena formulación debe ser <strong>clara, concreta, basada en información, relacionada con una necesidad real y abordable mediante un proyecto tecnológico.</strong></p>
+<div class="panel"><strong>Dos formas de plantearlo:</strong><p>A. «Tenemos que construir más papeleras».</p><p>B. «En el patio se acumulan residuos porque las papeleras disponibles son insuficientes».</p></div>
+<div class="choices">
+<button class="choice" onclick="answer(this,false,'Aquí ya estamos decidiendo una solución. Todavía necesitamos concretar el problema.')">A es mejor punto de partida.</button>
+<button class="choice" onclick="answer(this,true,'Correcto. Describe una situación y una posible causa sin decidir todavía qué vamos a construir.')">B es mejor punto de partida.</button>
+</div><div class="feedback"></div>
+<div class="task"><strong>Ahora formula tu propio problema.</strong><p>Utiliza una necesidad real que hayas detectado. Intenta explicar qué ocurre, dónde ocurre y qué necesidad existe.</p><textarea id="problem" placeholder="En... ocurre... y esto provoca... Necesitamos..."></textarea><button class="save" onclick="saveProblem()">Guardar mi formulación</button><div class="saved" id="saved">✓ Formulación guardada en este dispositivo.</div></div>
+</section>
+
+<section class="screen">
+<span class="tag">07 · CERRAMOS</span><h2>Investigar es decidir con información.</h2>
+<p>Ya no nos limitamos a decir «hay un problema». Hemos aprendido a observar, preguntar, buscar información, contrastar fuentes, analizar datos y formular el problema con precisión.</p>
+<div class="result"><strong>El camino de la investigación</strong><p>Observar → preguntar → buscar información → contrastar → analizar datos → formular el problema.</p></div>
+<div class="idea"><strong>La idea clave:</strong> los datos no sirven para llenar una página. Sirven para comprender mejor el problema y tomar decisiones.</div>
+<a class="button" href="../04-creatividad/index.html" style="display:inline-block;margin-top:8px">Ir a 1.4 · Creatividad →</a>
+</section>
+
+<div class="controls"><button class="back" onclick="go(-1)">← Atrás</button><button class="next" onclick="go(1)" id="next">Continuar →</button></div>
+</main>
+<footer><span>ProfeAlbertoD</span> · Unidad 1 · Tecnología 4.º ESO</footer>
+<script>
+let current=0;const screens=[...document.querySelectorAll('.screen')],bar=document.getElementById('bar'),step=document.getElementById('step');
+const problem=document.getElementById('problem');if(problem)problem.value=localStorage.getItem('profealbertod-u1-1-3')||'';
+function render(){screens.forEach((s,i)=>s.classList.toggle('active',i===current));bar.style.width=((current+1)/screens.length*100)+'%';step.textContent=(current+1)+' / '+screens.length;document.getElementById('next').textContent=current===screens.length-1?'Volver a la Unidad 1 →':'Continuar →';window.scrollTo({top:0,behavior:'smooth'});}
+function go(n){if(current===screens.length-1&&n>0){location.href='../index.html';return;}current=Math.max(0,Math.min(screens.length-1,current+n));render();}
+function answer(btn,ok,msg){const box=btn.parentElement;box.querySelectorAll('.choice').forEach(b=>b.classList.remove('correct','wrong'));btn.classList.add(ok?'correct':'wrong');box.nextElementSibling.textContent=msg;}
+function pickSource(el,ok){document.querySelectorAll('.source').forEach(x=>x.classList.remove('active'));el.classList.add('active');document.getElementById('sourceFeedback').textContent=ok?'Correcto. Esta fuente ofrece autoría, fecha y metodología que podemos contrastar.':'Antes de utilizarla necesitaríamos comprobar mejor su origen, fecha o evidencias.';}
+function saveProblem(){const v=problem.value.trim();if(!v)return;localStorage.setItem('profealbertod-u1-1-3',v);document.getElementById('saved').style.display='block';}
+render();
+</script>
+</body></html>
