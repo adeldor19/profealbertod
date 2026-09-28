@@ -4,7 +4,7 @@
 <section class="learn"><div class="learn-head"><span>ANTES DE EMPEZAR</span><h2>No empieces por la solución: empieza por comprender.</h2><p>Investigar bien permite tomar decisiones fundamentadas y evitar diseñar algo que no responde al problema real.</p></div><div class="learn-grid"><article><b>Problema, necesidad y solución</b><p>Una necesidad es aquello que se requiere para mejorar una situación; un problema es una dificultad que impide alcanzar un resultado; una solución es una respuesta posible. Confundirlos demasiado pronto puede limitar las alternativas.</p></article><article><b>Investigar para decidir</b><p>La investigación puede incluir observación, entrevistas, encuestas y análisis de información existente. Debe ayudar a conocer quién está afectado, qué ocurre, qué soluciones existen y qué requisitos debe cumplir la futura solución.</p></article><article><b>Design Thinking</b><p>Organiza el proceso en <strong>empatizar, definir, idear, prototipar y evaluar</strong>. No es una cadena rígida: la información obtenida al probar una solución puede hacer necesario volver atrás y modificarla.</p></article><article><b>Prototipar es aprender</b><p>Un prototipo es una representación o versión preliminar de una solución. Permite comprobar funcionamiento, facilidad de uso, seguridad, coste u otros requisitos antes del producto definitivo.</p></article></div></section>
 <section class="card"><h2>1 · Las cinco fases</h2><div class="flow" id="flow"></div><p id="flowText"></p></section>
 <section class="card"><h2>2 · Problema o solución</h2><p>«Las personas mayores tienen dificultades para utilizar determinados sistemas de iluminación» es...</p><div class="grid" id="q1"><button class="choice">Un problema</button><button class="choice">Una solución</button><button class="choice">Un recurso</button><button class="choice">Una restricción</button></div><div class="feedback" id="f1" data-ok="Correcto. Describe una dificultad, así que es un problema." data-no="No es esa. El enunciado describe una dificultad que hay que comprender antes de diseñar una solución.">Es un problema: describe una dificultad. «Desarrollar un sistema de iluminación con control simplificado» sería una posible solución.</div></section>
-<section class="card"><h2>3 · Investiga antes de decidir</h2><p>Para un sistema que reduzca el desperdicio de alimentos, elige las técnicas que aportarían evidencias sobre las personas y la situación.</p><div class="grid" id="q2"><button class="choice">Observación e entrevistas</button><button class="choice">Solo elegir una tecnología</button><button class="choice">Encuestas y análisis de información existente</button><button class="choice">Construir directamente el producto</button></div><div class="feedback" id="f2" data-ok="Correcto. Esas técnicas permiten obtener evidencias sobre las personas y la situación." data-no="No es esa. Busca técnicas que permitan investigar la situación antes de construir.">Observación, entrevistas, encuestas y análisis de información existente son técnicas de investigación descritas en la unidad.</div></section>
+<section class="card"><h2>3 · Investiga antes de decidir</h2><p>Para un sistema que reduzca el desperdicio de alimentos, elige las técnicas que aportarían evidencias sobre las personas y la situación.</p><div class="grid" id="q2"><button type="button" class="choice" data-correct="true">Observación e entrevistas</button><button type="button" class="choice" data-correct="false">Solo elegir una tecnología</button><button type="button" class="choice" data-correct="true">Encuestas y análisis de información existente</button><button type="button" class="choice" data-correct="false">Construir directamente el producto</button></div><button type="button" class="button" id="check-q2" style="margin-top:14px">Comprobar respuesta</button><div class="feedback" id="f2" data-ok="Correcto. Esas técnicas permiten obtener evidencias sobre las personas y la situación." data-no="No es esa. Busca técnicas que permitan investigar la situación antes de construir.">Observación, entrevistas, encuestas y análisis de información existente son técnicas de investigación descritas en la unidad.</div></section>
 <section class="card"><h2>4 · Divergir y converger</h2><div class="criteria"><div class="criterion"><b>DIVERGENTE</b><br>Generar muchas alternativas.</div><div class="criterion"><b>CONVERGENTE</b><br>Comparar y seleccionar.</div><div class="criterion"><b>CRITERIOS</b><br>Coste · seguridad · sostenibilidad · viabilidad · accesibilidad…</div></div><p>Escribe dos ideas diferentes para reducir el desperdicio de agua en un centro educativo.</p><textarea id="ideas"></textarea></section>
 <section class="card"><h2>5 · Prototipa para aprender</h2><p>Un prototipo es una representación o versión preliminar que permite estudiar una solución y detectar problemas antes del producto definitivo.</p><p>Si un prototipo funciona técnicamente pero los usuarios consideran que es difícil de utilizar, ¿qué harías?</p><div class="grid" id="q3"><button class="choice">Mantenerlo porque funciona.</button><button class="choice">Analizar los resultados, modificar y volver a probar.</button><button class="choice">Eliminar todo el proyecto.</button><button class="choice">Dejar de evaluar.</button></div><div class="feedback" id="f3" data-ok="Correcto. La evaluación alimenta la iteración: probar, analizar, modificar y volver a probar." data-no="No es esa. Si los usuarios tienen dificultades, hay que analizar, modificar y volver a probar.">La evaluación alimenta la iteración: prototipo → prueba → resultados → modificación → nuevo prototipo.</div></section>
 <section class="card"><h2>6 · Define el problema</h2><p>Formula un problema tecnológico concreto a partir de una situación general: «hay demasiado consumo de agua».</p><textarea id="problem" placeholder="¿Quién tiene la necesidad? ¿Qué debe mejorar? ¿Qué condición debe respetarse?"></textarea><button class="button" onclick="save()">Guardar definición</button><p id="saved"></p></section>
@@ -53,32 +53,28 @@ function single(id,f,correctIndex=0){
   });
 }
 function multi(id,f,correctIndexes){
-  const buttons=[...document.querySelectorAll('#'+id+' .choice')];
-  buttons.forEach(b=>b.onclick=()=>{
-    b.classList.toggle('selected');
-    b.classList.remove('correct','incorrect');
+  const box=document.getElementById(id);
+  const buttons=[...box.querySelectorAll('.choice')];
+  const check=document.getElementById('check-'+id);
+  buttons.forEach(b=>{
+    b.onclick=()=>{
+      b.classList.toggle('selected');
+      b.classList.remove('correct','incorrect');
+    };
   });
-  const check=document.createElement('button');
-  check.className='button';
-  check.type='button';
-  check.textContent='Comprobar selección';
-  document.getElementById(id).after(check);
   check.onclick=()=>{
     const selected=buttons.map((b,i)=>b.classList.contains('selected')?i:null).filter(i=>i!==null);
-    const ok=selected.length===correctIndexes.length&&selected.every(i=>correctIndexes.includes(i));
+    const ok=selected.length===correctIndexes.length && selected.every(i=>correctIndexes.includes(i));
     buttons.forEach((b,i)=>{
       b.classList.remove('correct','incorrect');
-      if(correctIndexes.includes(i)){
-        b.classList.add('correct');
-      }else{
-        b.classList.add('incorrect');
-      }
+      b.classList.add(correctIndexes.includes(i)?'correct':'incorrect');
     });
     const el=document.getElementById(f);
     el.classList.add('show');
-    el.textContent=ok?el.dataset.ok:el.dataset.no;
+    el.textContent=ok ? el.dataset.ok : el.dataset.no;
   };
 }
+
 single('q1','f1',0);
 multi('q2','f2',[0,2]);
 single('q3','f3',1);
