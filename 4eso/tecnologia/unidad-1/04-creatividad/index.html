@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>1.4 · Creatividad · ProfeAlbertoD</title>
+<link rel="stylesheet" href="/profealbertod/css/style.css">
+<style>
+.lesson{max-width:980px;margin:auto;padding:42px 20px 100px}.lesson-head{margin:20px 0 34px}.kicker{font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}.lesson-head h1{font-size:clamp(2.8rem,6vw,5.4rem);line-height:.92;letter-spacing:-.065em;margin:14px 0 18px;max-width:850px}.lesson-head p,.screen p{font-size:1.08rem;color:var(--muted);max-width:790px}
+.progress-wrap{display:flex;align-items:center;gap:14px;margin:30px 0 44px}.progress{height:7px;background:#e8ebee;border-radius:20px;overflow:hidden;flex:1}.progress i{display:block;width:14.2%;height:100%;background:var(--accent);transition:.3s}.step{font-size:.78rem;font-weight:800;color:var(--muted)}
+.screen{display:none}.screen.active{display:block}.tag{display:inline-block;background:#fff0eb;color:var(--accent);padding:7px 11px;border-radius:99px;font-weight:800;font-size:.75rem}.screen h2{font-size:clamp(2rem,4.5vw,4rem);line-height:.98;letter-spacing:-.055em;margin:18px 0}
+.panel,.task,.criteria{background:#fff;border:1px solid var(--line);border-radius:22px;padding:28px;margin:28px 0}.idea{border-left:5px solid var(--accent);padding:15px 20px;background:#fff;margin:25px 0}
+.choices{display:grid;gap:12px;margin:22px 0}.choice{border:2px solid var(--line);background:#fff;border-radius:15px;padding:18px;text-align:left;cursor:pointer;font:inherit}.choice:hover{border-color:var(--accent)}.choice.correct{border-color:#2d9d61;background:#effaf4}.choice.wrong{border-color:#d65b5b;background:#fff2f2}.feedback{min-height:27px;font-weight:700;margin-top:10px}
+.scamper{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:22px 0}.sc{border:1px solid var(--line);border-radius:16px;padding:16px;cursor:pointer;background:#fff}.sc:hover,.sc.active{border-color:var(--accent);background:#fff8f5}.sc b{display:block;font-size:1.3rem;color:var(--accent)}.sc span{font-size:.85rem;color:var(--muted)}
+.brain{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0}.bubble{border:2px solid var(--line);border-radius:999px;padding:12px 16px;background:#fff;cursor:pointer}.bubble.used{background:var(--ink);color:#fff;border-color:var(--ink)}
+textarea{width:100%;min-height:130px;border:1px solid var(--line);border-radius:12px;padding:15px;font:inherit;resize:vertical;box-sizing:border-box}.save{border:0;border-radius:10px;padding:13px 19px;font:inherit;font-weight:800;cursor:pointer;background:var(--ink);color:#fff;margin-top:14px}.saved{display:none;color:#23824d;font-weight:800;margin-top:10px}
+.score{width:100%;border-collapse:collapse;margin-top:18px}.score th,.score td{padding:12px;border-bottom:1px solid var(--line);text-align:left}.score input{width:55px;padding:8px;border:1px solid var(--line);border-radius:8px;font:inherit}.result{background:var(--ink);color:#fff;border-radius:22px;padding:28px;margin-top:24px}.result p{color:#d8dee4}
+.controls{display:flex;justify-content:space-between;gap:12px;margin-top:42px}.controls button{border:0;border-radius:10px;padding:13px 19px;font:inherit;font-weight:800;cursor:pointer}.back{background:#e9ecef}.next{background:var(--ink);color:#fff}
+@media(max-width:700px){.scamper{grid-template-columns:repeat(2,1fr)}.score{min-width:650px}.criteria{overflow-x:auto}}
+</style>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="/profealbertod/">Profe<span>AlbertoD</span></a><nav><a href="../">Unidad 1</a><a href="../../">4.º ESO</a></nav></header>
+<main class="lesson">
+<div class="lesson-head"><span class="kicker">Unidad 1 · 1.4</span><h1>Creatividad.</h1><p>Una buena solución no siempre aparece a la primera. Generamos alternativas, transformamos ideas y después elegimos las que pueden funcionar.</p></div>
+<div class="progress-wrap"><div class="progress"><i id="bar"></i></div><span class="step" id="step">1 / 7</span></div>
+
+<section class="screen active">
+<span class="tag">01 · PENSAMOS DIFERENTE</span><h2>Ser creativo también es mejorar.</h2>
+<p>En tecnología, la creatividad es la capacidad de generar ideas nuevas y útiles para resolver problemas. No significa necesariamente inventar algo que nunca haya existido.</p>
+<div class="choices">
+<button class="choice" onclick="answer(this,true,'Exacto. Mejorar, combinar o adaptar soluciones existentes también es creatividad tecnológica.')">Mejorar una solución que ya existe.</button>
+<button class="choice" onclick="answer(this,true,'Sí. Combinar ideas de diferentes campos es una forma de generar propuestas nuevas.')">Combinar ideas de diferentes campos.</button>
+<button class="choice" onclick="answer(this,true,'También. Utilizar un recurso de una manera diferente puede producir una solución útil.')">Usar un recurso de una manera diferente.</button>
+<button class="choice" onclick="answer(this,false,'No necesariamente. Una solución puede ser creativa aunque parta de algo que ya existe.')">Inventar siempre algo completamente nuevo.</button>
+</div><div class="feedback"></div>
+<div class="idea"><strong>Idea clave:</strong> una buena idea no tiene que ser completamente nueva. Mejorar una solución que ya existe también puede ser innovar.</div>
+</section>
+
+<section class="screen">
+<span class="tag">02 · GENERAMOS</span><h2>No elijas todavía. Genera.</h2>
+<p>Una vez definido el problema, primero producimos varias posibilidades. Durante esta fase no descartamos rápidamente una idea porque parezca difícil, cara o poco habitual.</p>
+<div class="panel"><strong>Reto:</strong> en los días de lluvia, muchas personas llegan al aula con paraguas mojados.</div>
+<p><strong>Selecciona las propuestas que son realmente diferentes entre sí.</strong></p>
+<div class="choices" id="ideas">
+<button class="choice" onclick="toggleIdea(this)">Crear un soporte para paraguas.</button>
+<button class="choice" onclick="toggleIdea(this)">Instalar una zona de secado.</button>
+<button class="choice" onclick="toggleIdea(this)">Hacer un soporte más grande.</button>
+<button class="choice" onclick="toggleIdea(this)">Utilizar un sistema para recoger el agua.</button>
+<button class="choice" onclick="toggleIdea(this)">Poner más paraguas en el aula.</button>
+</div><div class="feedback" id="ideaFeedback">El objetivo es ampliar el número de enfoques, no modificar solamente el tamaño de una misma solución.</div>
+</section>
+
+<section class="screen">
+<span class="tag">03 · BRAINSTORMING</span><h2>Primero lluvia. Después selección.</h2>
+<p>En un brainstorming se plantea claramente el problema, se proponen ideas libremente, se anotan todas y no se juzgan durante la generación. Después se revisan y combinan.</p>
+<div class="panel"><strong>Ordena mentalmente las dos fases:</strong>
+<div class="choices">
+<button class="choice" onclick="answer(this,true,'Correcto. Primero necesitamos abrir posibilidades; después podemos analizarlas.')">1. Generar → 2. Analizar y seleccionar.</button>
+<button class="choice" onclick="answer(this,false,'Si juzgamos cada idea al instante podemos descartar propuestas que podrían llevarnos a otras mejores.')">1. Analizar → 2. Generar.</button>
+</div><div class="feedback"></div></div>
+<div class="idea"><strong>Regla:</strong> durante la generación, una idea que parece poco útil puede servir para producir otra mucho mejor.</div>
+</section>
+
+<section class="screen">
+<span class="tag">04 · SCAMPER</span><h2>Transforma una solución.</h2>
+<p>SCAMPER nos ayuda a modificar una solución existente mediante siete acciones. Haz clic en una letra para descubrir qué pregunta podemos hacernos.</p>
+<div class="scamper">
+<div class="sc" onclick="scamper(this,'Sustituir','¿Qué elemento podríamos cambiar?')"><b>S</b><span>Sustituir</span></div>
+<div class="sc" onclick="scamper(this,'Combinar','¿Qué podríamos unir?')"><b>C</b><span>Combinar</span></div>
+<div class="sc" onclick="scamper(this,'Adaptar','¿Qué podríamos adaptar de otra solución?')"><b>A</b><span>Adaptar</span></div>
+<div class="sc" onclick="scamper(this,'Modificar','¿Qué podríamos cambiar, aumentar o reducir?')"><b>M</b><span>Modificar</span></div>
+<div class="sc" onclick="scamper(this,'Proponer otros usos','¿Podría utilizarse para otra finalidad?')"><b>P</b><span>Otros usos</span></div>
+<div class="sc" onclick="scamper(this,'Eliminar','¿Qué elemento podríamos quitar?')"><b>E</b><span>Eliminar</span></div>
+<div class="sc" onclick="scamper(this,'Reordenar','¿Podríamos cambiar el orden o la forma de utilizarlo?')"><b>R</b><span>Reordenar</span></div>
+</div>
+<div class="result" id="scResult">Elige una letra para empezar a transformar una botella reutilizable.</div>
+</section>
+
+<section class="screen">
+<span class="tag">05 · MAPA MENTAL</span><h2>Conecta las ideas.</h2>
+<p>Un mapa mental parte de una idea principal y añade conceptos relacionados mediante ramas.</p>
+<div class="panel"><strong>Problema central: movilidad del alumnado hasta el centro.</strong><p>Haz clic en las ramas que deberían formar parte de una investigación/ideación del problema.</p>
+<div class="brain">
+<button class="bubble" onclick="this.classList.toggle('used')">Causas</button>
+<button class="bubble" onclick="this.classList.toggle('used')">Personas afectadas</button>
+<button class="bubble" onclick="this.classList.toggle('used')">Posibles soluciones</button>
+<button class="bubble" onclick="this.classList.toggle('used')">Recursos necesarios</button>
+<button class="bubble" onclick="this.classList.toggle('used')">Color favorito del equipo</button>
+<button class="bubble" onclick="this.classList.toggle('used')">Número de la clase</button>
+</div>
+<div class="feedback">Selecciona las ramas relacionadas directamente con el problema.</div></div>
+<div class="idea"><strong>Recuerda:</strong> el mapa mental sirve para visualizar relaciones entre ideas y organizar mucha información.</div>
+</section>
+
+<section class="screen">
+<span class="tag">06 · SELECCIONAMOS</span><h2>Generar muchas ideas no basta.</h2>
+<p>Ahora toca pasar del pensamiento divergente al convergente: comparar alternativas utilizando criterios.</p>
+<div class="panel"><strong>Vas a comparar tres propuestas para un problema tecnológico.</strong>
+<table class="score"><tr><th>Criterio</th><th>Solución A</th><th>Solución B</th><th>Solución C</th></tr>
+<tr><td>Coste</td><td>4</td><td>2</td><td>3</td></tr><tr><td>Utilidad</td><td>3</td><td>4</td><td>4</td></tr><tr><td>Sostenibilidad</td><td>4</td><td>3</td><td>2</td></tr><tr><td>Viabilidad</td><td>4</td><td>2</td><td>3</td></tr></table>
+<p>Los criterios pueden ser <strong>viabilidad, coste, utilidad, sostenibilidad, seguridad y accesibilidad</strong>.</p>
+<div class="choices">
+<button class="choice" onclick="answer(this,true,'Correcto. No debemos elegir solo porque una propuesta nos guste: hay que compararla con criterios.')">Comparar las propuestas con criterios.</button>
+<button class="choice" onclick="answer(this,false,'El coste es importante, pero por sí solo no nos dice si una solución es útil, segura o viable.')">Elegir siempre la más barata.</button>
+<button class="choice" onclick="answer(this,false,'La primera idea no tiene por qué ser la que mejor responda al problema.')">Elegir la primera idea que aparece.</button>
+</div><div class="feedback"></div></div>
+</section>
+
+<section class="screen">
+<span class="tag">07 · CREAMOS</span><h2>Ahora te toca generar.</h2>
+<p>Piensa en una necesidad tecnológica real que hayas detectado. Propón varias soluciones y desarrolla una de ellas. Puedes inspirarte en brainstorming, SCAMPER o un mapa mental.</p>
+<div class="task"><strong>Mi propuesta</strong><textarea id="proposal" placeholder="Problema o necesidad:
+1. Solución A...
+2. Solución B...
+3. Solución C...
+
+La propuesta que desarrollaría es...
+¿Por qué?"></textarea><button class="save" onclick="saveProposal()">Guardar mi propuesta</button><div class="saved" id="saved">✓ Propuesta guardada en este dispositivo.</div></div>
+<div class="result"><strong>Qué debes recordar</strong><p>Generar → transformar → conectar → comparar → seleccionar.</p></div>
+<a class="button" href="../05-equipo/index.html" style="display:inline-block;margin-top:8px">Ir a 1.5 · Trabajo en equipo →</a>
+</section>
+
+<div class="controls"><button class="back" onclick="go(-1)">← Atrás</button><button class="next" onclick="go(1)" id="next">Continuar →</button></div>
+</main>
+<footer><span>ProfeAlbertoD</span> · Unidad 1 · Tecnología 4.º ESO</footer>
+<script>
+let current=0;const screens=[...document.querySelectorAll('.screen')],bar=document.getElementById('bar'),step=document.getElementById('step');const proposal=document.getElementById('proposal');if(proposal)proposal.value=localStorage.getItem('profealbertod-u1-1-4')||'';
+function render(){screens.forEach((s,i)=>s.classList.toggle('active',i===current));bar.style.width=((current+1)/screens.length*100)+'%';step.textContent=(current+1)+' / '+screens.length;document.getElementById('next').textContent=current===screens.length-1?'Volver a la Unidad 1 →':'Continuar →';window.scrollTo({top:0,behavior:'smooth'});}
+function go(n){if(current===screens.length-1&&n>0){location.href='../index.html';return;}current=Math.max(0,Math.min(screens.length-1,current+n));render();}
+function answer(btn,ok,msg){const box=btn.parentElement;box.querySelectorAll('.choice').forEach(b=>b.classList.remove('correct','wrong'));btn.classList.add(ok?'correct':'wrong');box.nextElementSibling.textContent=msg;}
+function toggleIdea(btn){btn.classList.toggle('correct');const count=document.querySelectorAll('#ideas .correct').length;document.getElementById('ideaFeedback').textContent=count?('Has generado '+count+' alternativa'+(count===1?'':'s')+'. Ahora piensa si son enfoques realmente diferentes.'): 'El objetivo es ampliar el número de enfoques, no modificar solamente el tamaño de una misma solución.';}
+function scamper(el,title,msg){document.querySelectorAll('.sc').forEach(x=>x.classList.remove('active'));el.classList.add('active');document.getElementById('scResult').innerHTML='<strong>'+title+'</strong><p>'+msg+'</p>';}
+function saveProposal(){const v=proposal.value.trim();if(!v)return;localStorage.setItem('profealbertod-u1-1-4',v);document.getElementById('saved').style.display='block';}
+render();
+</script>
+</body></html>
